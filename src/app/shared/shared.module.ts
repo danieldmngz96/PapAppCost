@@ -4,24 +4,22 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '../material/material.module';
-import { LayoutComponent } from '../layout/layout.component';
+import { HomeModule } from '../modules/home/home.module';
+
 
 
 
 @NgModule({
   declarations: [
-    HeaderComponent,
-    FooterComponent
   ],
   exports: [
     CommonModule,
-    HeaderComponent,
-    FooterComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
-    MaterialModule
+    MaterialModule,
+    HomeModule
   ]
 })
 export class SharedModule { }

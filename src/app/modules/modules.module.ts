@@ -6,6 +6,8 @@ import { LoginComponent } from './login/login.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ActivityComponent } from './activity/activity.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { MaterialModule } from '../material/material.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -19,7 +21,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     DashboardComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MaterialModule,
+    SharedModule
   ]
 })
 export class ModulesModule { }

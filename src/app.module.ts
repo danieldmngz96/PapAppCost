@@ -8,6 +8,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './app/shared/header/header.component';
 import { FooterComponent } from './app/shared/footer/footer.component';
+import { SharedModule } from './app/shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -17,11 +20,17 @@ import { FooterComponent } from './app/shared/footer/footer.component';
     LayoutComponent,
     HeaderComponent,
     FooterComponent,
+    AppComponent,
    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    MaterialModule,
+    RouterModule,
+    AppRoutingModule
    ],
   providers: [],
   bootstrap: [ AppComponent ]
