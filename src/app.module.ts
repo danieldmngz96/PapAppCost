@@ -12,6 +12,7 @@ import { SharedModule } from './app/shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { HomeRoutingModule } from './app/modules/home/home-routing.module';
+import { RegisterRoutingModule } from './app/modules/registro/register-routing.module';
 
 
 
@@ -32,7 +33,8 @@ import { HomeRoutingModule } from './app/modules/home/home-routing.module';
     MaterialModule,
     RouterModule,
     AppRoutingModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    RegisterRoutingModule
    ],
   providers: [],
   bootstrap: [ AppComponent ]

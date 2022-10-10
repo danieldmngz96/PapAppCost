@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home.component';
-
+import { RegistroModule } from './registro.module';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: RegistroModule },
 ];
 
-
 @NgModule({
+  declarations: [],
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-
-export class HomeRoutingModule { }
+export class RegisterRoutingModule { }
