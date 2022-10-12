@@ -1,12 +1,52 @@
-<h1 mat-dialog-title>Registrate</h1>
+<h1 mat-dialog-title style="text-align: center;" class="title-register">Registrate</h1>
 <div mat-dialog-content>
-  <p>Llena los datos del formulario para Registrarte </p>
-  <mat-form-field appearance="fill">
-    <mat-label>Favorite Animal</mat-label>
-    <input matInput >
-  </mat-form-field>
+  <p class="register-p">Llena los datos del formulario para Registrarte </p>
+  <form style="text-align: center;">
+    <mat-form-field appearance="fill" style="width: 400px !important">
+      <mat-label>Correo electronico</mat-label>
+      <input matInput formControlName="email" placeholder="Ingresa Correo Electronico">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" style="width: 400px !important">
+      <mat-label>Confirmar Correo electronico</mat-label>
+      <input matInput  formControlName="email" placeholder="Ingresa Correo Electronico">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill" style="width: 400px !important">
+      <mat-label>Contraeña</mat-label>
+      <input matInput  formControlName="email" type="password" placeholder="Ingresa Correo Electronico">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill" style="width: 400px !important">
+      <mat-label>Confirmar Contraseña</mat-label>
+      <input matInput  formControlName="email" type="password" placeholder="Ingresa Correo Electronico">
+    </mat-form-field>
+
+    <p class="register-p">Ubicacion </p>
+    <mat-form-field appearance="fill">
+      <mat-label>Departamento</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let departament of Departamentos" [value]="departament.value">
+          {{departament.value}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    &nbsp;
+    &nbsp;
+
+    <mat-form-field appearance="fill">
+      <mat-label>Municipio</mat-label>
+      <mat-select >
+        <mat-option >
+
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+
 </div>
 <div mat-dialog-actions>
-  <button mat-button >No Thanks</button>
-  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-button>Registrarme</button>
 </div>
