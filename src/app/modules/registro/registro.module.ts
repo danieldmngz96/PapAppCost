@@ -6,11 +6,11 @@ import { RegistroComponent } from './registro.component';
 import { RegisterRoutingModule } from './register-routing.module';
 
 @NgModule({
+  declarations: [RegistroComponent],
   imports: [
     CommonModule,
     MaterialModule,
     SharedModule,
   ],
-  declarations: [RegistroComponent]
 })
 export class RegistroModule { }

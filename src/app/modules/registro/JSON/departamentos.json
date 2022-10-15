@@ -96,7 +96,7 @@
            {
         "id": "20",
         "sigla": "BY",
-        "nome": "Boyacá"
+        "nome": "Boyaca"
       },
            {
         "id": "21",
@@ -154,12 +154,12 @@
         "nome": "Atlántico"
       },
       {
-        "id": "31",
+        "id": "32",
         "sigla": "QN",
         "nome": "Quindío"
       },
       {
-        "id": "32",
+        "id": "33",
         "sigla": "SA",
         "nome": "San Andrés y Providencia"
       }]
