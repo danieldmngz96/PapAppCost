@@ -14,6 +14,6 @@ import { HomeComponent } from './home.component';
     SharedModule,
     HomeRoutingModule
   ],
-  declarations: [HomeComponent]
+  declarations: []
 })
 export class HomeModule { }

@@ -17,12 +17,13 @@ import { RegisterRoutingModule } from './app/modules/registro/register-routing.m
 
 
 
+
 @NgModule({
   declarations: [
     LayoutComponent,
-    HeaderComponent,
-    FooterComponent,
     AppComponent,
+    HeaderComponent,
+    FooterComponent
    ],
   imports: [
     BrowserModule,
