@@ -4,3 +4,68 @@
 .activo a {
   color: green;
 }
+.header-toolbar {
+  margin-bottom: 20px;
+  height: 130px;
+  background-color: #2D6514;
+}
+nav > a {
+  padding: 5px;
+  text-decoration: none;
+}
+ a.active:hover {
+  background-color: #a6ff00;
+}
+.header-row{
+  width: 100%;
+}
+.header-toolbar {
+  margin-bottom: 20px;
+  height: 130px;
+  background-color: #2D6514;
+}
+a {
+  margin-right: 25px;
+  color: white;
+}
+.burger-menu{
+  color: rgb(0, 0, 0);
+  float: right;
+}
+
+
+@media (min-width: 260px) and (max-width: 768px) {
+  .header-row{
+    width: 50%;
+  }
+  .burger-menu{
+    color: rgb(255, 255, 255);
+  }
+  .desktop-menu{
+    color: #fff;
+    display: none;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 2400px) {
+  .desktop-menu{
+    color: #fff;
+  }
+  .burger-menu{
+    color: rgba(0,0, 0, 0.0);
+    display: none;
+    float: right;
+  }
+}
+
+
+.activo {
+  background-color: #012D04;
+}
+.activo:hover {
+  background-color: rgb(5, 255, 1);
+}
+.activo a {
+  color: green;
+}
+

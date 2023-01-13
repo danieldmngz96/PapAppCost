@@ -11,7 +11,8 @@ import { FooterComponent } from './app/shared/footer/footer.component';
 import { SharedModule } from './app/shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-import { HomeRoutingModule } from './app/modules/home/home-routing.module';
+import { HomeComponent } from './app/modules/home/home.component';
+
 
 
 
@@ -32,9 +33,8 @@ import { HomeRoutingModule } from './app/modules/home/home-routing.module';
     MaterialModule,
     RouterModule,
     AppRoutingModule,
-    HomeRoutingModule
    ],
   providers: [],
-  bootstrap: [ AppComponent ]
+  bootstrap: [ AppComponent ],
 })
 export class AppModule { }
