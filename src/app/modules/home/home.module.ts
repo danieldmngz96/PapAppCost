@@ -14,6 +14,5 @@ import { AppRoutingModule } from '../app-routing.module';
     AppRoutingModule,
     MaterialModule,
   ],
-  exports:[]
 })
 export class HomeModule { }

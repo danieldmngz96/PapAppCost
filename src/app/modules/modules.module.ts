@@ -8,6 +8,8 @@ import { ActivityComponent } from './activity/activity.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MaterialModule } from '../material/material.module';
 import { SharedModule } from '../shared/shared.module';
+import { RegistroModule } from './registro/registro.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -18,12 +20,14 @@ import { SharedModule } from '../shared/shared.module';
     LoginComponent,
     WelcomeComponent,
     ActivityComponent,
-    DashboardComponent
+    DashboardComponent,
+    RegistroComponent
   ],
   imports: [
     CommonModule,
     MaterialModule,
-    SharedModule
+    SharedModule,
+    RouterModule
   ]
 })
 export class ModulesModule { }

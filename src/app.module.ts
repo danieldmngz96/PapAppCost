@@ -5,13 +5,14 @@ import { AppComponent } from './app/app.component';
 import { MaterialModule } from './app/material/material.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './app/shared/header/header.component';
 import { FooterComponent } from './app/shared/footer/footer.component';
 import { SharedModule } from './app/shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-import { HomeComponent } from './app/modules/home/home.component';
+import { HomeRoutingModule } from './app/modules/home/home-routing.module';
+import { RegisterRoutingModule } from './app/modules/registro/register-routing.module';
 
 
 
@@ -20,9 +21,9 @@ import { HomeComponent } from './app/modules/home/home.component';
 @NgModule({
   declarations: [
     LayoutComponent,
-    HeaderComponent,
-    FooterComponent,
     AppComponent,
+    HeaderComponent,
+    FooterComponent
    ],
   imports: [
     BrowserModule,
@@ -33,6 +34,7 @@ import { HomeComponent } from './app/modules/home/home.component';
     MaterialModule,
     RouterModule,
     AppRoutingModule,
+    ReactiveFormsModule
    ],
   providers: [],
   bootstrap: [ AppComponent ],

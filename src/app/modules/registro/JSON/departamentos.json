@@ -1,0 +1,165 @@
+      [{
+        "id": "1",
+        "sigla": "AM",
+        "nome": "Amazonas"
+      },
+           {
+        "id": "2",
+        "sigla": "VCH",
+        "nome": "Vichada"
+      },
+           {
+        "id": "3",
+        "sigla": "CQ",
+        "nome": "Caqueta"
+      },
+           {
+        "id": "4",
+        "sigla": "MT",
+        "nome": "Meta"
+      },
+           {
+        "id": "5",
+        "sigla": "GI",
+        "nome": "Guainía"
+      },
+           {
+        "id": "6",
+        "sigla": "AN",
+        "nome": "Antioquia"
+      },
+           {
+        "id": "7",
+        "sigla": "VP",
+        "nome": "Vaupes"
+      },
+           {
+        "id": "8",
+        "sigla": "GU",
+        "nome": "Guaviare"
+      },
+           {
+        "id": "9",
+        "sigla": "CH",
+        "nome": "Choco"
+      },
+           {
+        "id": "10",
+        "sigla": "CS",
+        "nome": "Casanare"
+      },
+           {
+        "id": "11",
+        "sigla": "NR",
+        "nome": "Nariño"
+      },
+           {
+        "id": "12",
+        "sigla": "ST",
+        "nome": "Santander"
+      },
+           {
+        "id": "13",
+        "sigla": "CA",
+        "nome": "Cauca"
+      },
+           {
+        "id": "14",
+        "sigla": "PT",
+        "nome": "Putumayo"
+      },
+           {
+        "id": "15",
+        "sigla": "AR",
+        "nome": "Arauca"
+      },
+           {
+        "id": "16",
+        "sigla": "PE",
+        "nome": "Pernambuco"
+      },
+           {
+        "id": "17",
+        "sigla": "BO",
+        "nome": "Bolívar"
+      },
+           {
+        "id": "18",
+        "sigla": "COR",
+        "nome": "Córdoba"
+      },
+           {
+        "id": "19",
+        "sigla": "TL",
+        "nome": "Tolima"
+      },
+           {
+        "id": "20",
+        "sigla": "BY",
+        "nome": "Boyaca"
+      },
+           {
+        "id": "21",
+        "sigla": "MG",
+        "nome": "Magdalena"
+      },
+           {
+        "id": "22",
+        "sigla": "CS",
+        "nome": "Cesar"
+      },
+           {
+        "id": "23",
+        "sigla": "CUN",
+        "nome": "Cundinamarca"
+      },
+           {
+        "id": "24",
+        "sigla": "VC",
+        "nome": "Valle del Cauca"
+      },
+           {
+        "id": "25",
+        "sigla": "NS",
+        "nome": "Norte de Santander"
+      },
+           {
+        "id": "26",
+        "sigla": "LGUA",
+        "nome": "La Guajira"
+      },
+           {
+        "id": "27",
+        "sigla": "HU",
+        "nome": "Huila"
+      },
+      {
+        "id": "28",
+        "sigla": "SRC",
+        "nome": "Sucre"
+      },
+      {
+        "id": "29",
+        "sigla": "CLD",
+        "nome": "Caldas"
+      },
+      {
+        "id": "30",
+        "sigla": "RIS",
+        "nome": "Risaralda"
+      },
+      {
+        "id": "31",
+        "sigla": "ALT",
+        "nome": "Atlántico"
+      },
+      {
+        "id": "32",
+        "sigla": "QN",
+        "nome": "Quindío"
+      },
+      {
+        "id": "33",
+        "sigla": "SA",
+        "nome": "San Andrés y Providencia"
+      }]

@@ -2,8 +2,12 @@
 @import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
 
 body {
-  margin-top: 0px;
-margin-left: 0px;
-margin-bottom: 0px;
-margin-right: 0px;
+margin: 0px 0px 0px 0px;
+}
+
+:root {
+  --green-dark: #2B580C;
+  --green-good: #639A67;
+  --green-light: #D8EBB5;
+  --yellow: #D9BF77;
 }
