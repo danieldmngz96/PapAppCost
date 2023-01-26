@@ -1,13 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
-@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+ @import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
 
 body {
-margin: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
 }
 
 :root {
   --green-dark: #2B580C;
   --green-good: #639A67;
-  --green-light: #D8EBB5;
+  --green-light: #efffe4;
   --yellow: #D9BF77;
+  /*Variables para circilos*/
+  --circle-background-one: #CCD6A6;
+  --circle-background-two: #DAE2B6;
+  --circle-background-theree: #BFD8B8;
+  --circle-background-four: #F1F7E7;
+}
+
+html {
+  background: var(--green-light);
 }

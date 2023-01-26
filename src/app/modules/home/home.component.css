@@ -1,6 +1,38 @@
+* {
+  background-color: var(--green-light);
+}
+
 main {
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: 50% 50% ;
-  grid-template-rows: 150px  ;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 150px;
+  margin-top: 10%;
+}
+
+.circle-green-one {
+  height: 225px;
+  width: 225px;
+  background-color: var(--circle-background-theree);
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  left: 289px;
+}
+
+.circle-green-two {
+  height: 325px;
+  width: 325px;
+  background-color: var(--circle-background-one);
+  border-radius: 50%;
+  display: inline-block;
+
+}
+
+.img-papa {
+  position: relative;
+  width: 39%;
+  background: transparent;
+  bottom: 8px;
+  left: -296px;
 }
