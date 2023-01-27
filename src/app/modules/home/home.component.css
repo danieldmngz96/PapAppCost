@@ -33,6 +33,41 @@ main {
   position: relative;
   width: 39%;
   background: transparent;
-  bottom: 8px;
-  left: -296px;
+  left: 293px;
+  bottom: 217px;
+}
+
+/* //Pantallas grandes (desktops de menos de 1200px) */
+@media (max-width: 1199.98px) {
+
+}
+
+/* //Pantallas medianas (tablets de menos de 992px) */
+@media (max-width: 991.98px) {
+
+}
+
+/* //Pantallas pequeñas (móviles en landscape de menos de 768px) */
+@media (max-width: 767.98px) {
+
+}
+
+/* //Pantallas muy pequeñas (móviles en portrait de menos de 576px) */
+@media (max-width: 575.98px) {
+  .circle-green-one {
+    display: none;
+  }
+
+  .circle-green-two {
+    display: none;
+
+  }
+
+  .img-papa {
+    position: relative;
+    width: 159%;
+    background: transparent;
+    left: 93px;
+    top: 157px;
+  }
 }
