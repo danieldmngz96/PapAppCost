@@ -12,3 +12,27 @@
 .img{
   grid-column: 2 / 2;
 }
+.circle-green-one {
+  height: 225px;
+  width: 225px;
+  background-color: var(--circle-background-theree);
+  border-radius: 50%;
+
+
+}
+
+.circle-green-two {
+  height: 325px;
+  width: 325px;
+  background-color: var(--circle-background-one);
+  border-radius: 50%;
+
+
+}
+
+.img-papa {
+
+  width: 69%;
+  background: transparent;
+
+}

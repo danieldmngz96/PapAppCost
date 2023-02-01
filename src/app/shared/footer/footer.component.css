@@ -9,7 +9,6 @@ nav > a {
   width: 100%;
 }
 .header-toolbar {
-  margin-bottom: 20px;
   height: 130px;
   background-color: #2D6514;
 }
@@ -58,13 +57,13 @@ a {
   background-color: #ccc;
 }
 .activo:hover {
-  background-color: rgb(5, 255, 1);
+  background-color: var(--green-light)
 }
 .activo a {
   color: green;
 }
 .header-toolbar {
-  margin-bottom: 20px;
+
   height: 130px;
   background-color: #2D6514;
 }
@@ -79,9 +78,9 @@ nav > a {
   width: 100%;
 }
 .header-toolbar {
-  margin-bottom: 20px;
-  height: 130px;
+
   background-color: #2D6514;
+  display: flex;
 }
 a {
   margin-right: 25px;
@@ -122,9 +121,9 @@ a {
   background-color: #012D04;
 }
 .activo:hover {
-  background-color: rgb(5, 255, 1);
+  background-color: var(--green-light)
 }
 .activo a {
-  color: green;
+  color: var(--green-good);
 }
 

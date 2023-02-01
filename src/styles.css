@@ -3,6 +3,9 @@
 
 body {
   margin: 0px 0px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
 }
 
 :root {
@@ -19,4 +22,9 @@ body {
 
 html {
   background: var(--green-light);
+  height: 100%;
+}
+
+footer{
+  margin-top: auto;
 }

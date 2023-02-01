@@ -53,10 +53,11 @@ a {
 
 
 .activo {
-  background-color: #012D04;
+  background-color: var(--green-dark)
 }
+
 .activo:hover {
-  background-color: rgb(5, 255, 1);
+  background-color: var(--green-good)
 }
 .activo a {
   color: green;
