@@ -59,6 +59,8 @@ import { NgModule } from '@angular/core';
     MatRadioModule,
   ],
   exports: [
+    MatCardModule,
+    MatButtonModule,
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,

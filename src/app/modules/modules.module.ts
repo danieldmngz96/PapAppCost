@@ -10,6 +10,7 @@ import { MaterialModule } from '../material/material.module';
 import { SharedModule } from '../shared/shared.module';
 import { RegistroModule } from './registro/registro.module';
 import { RouterModule } from '@angular/router';
+import { ContactoComponent } from './contacto/contacto.component';
 
 
 
@@ -21,7 +22,7 @@ import { RouterModule } from '@angular/router';
     WelcomeComponent,
     ActivityComponent,
     DashboardComponent,
-    RegistroComponent
+    RegistroComponent,
   ],
   imports: [
     CommonModule,

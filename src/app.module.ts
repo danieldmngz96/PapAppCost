@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { HomeRoutingModule } from './app/modules/home/home-routing.module';
 import { RegisterRoutingModule } from './app/modules/registro/register-routing.module';
+import { ContactoComponent } from './app/modules/contacto/contacto.component';
 
 
 
@@ -23,7 +24,7 @@ import { RegisterRoutingModule } from './app/modules/registro/register-routing.m
     LayoutComponent,
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
    ],
   imports: [
     BrowserModule,
