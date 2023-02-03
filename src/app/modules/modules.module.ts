@@ -16,7 +16,6 @@ import { ContactoComponent } from './contacto/contacto.component';
 
 @NgModule({
   declarations: [
-    HomeComponent,
     RegistroComponent,
     LoginComponent,
     WelcomeComponent,

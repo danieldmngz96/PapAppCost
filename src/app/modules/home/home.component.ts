@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {BubblesComponent} from 'src/app/layout/bubbles/bubbles.component';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

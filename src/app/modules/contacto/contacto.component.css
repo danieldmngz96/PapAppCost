@@ -1,17 +1,18 @@
-.grid{
+.grid {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: 500px 500px;
   grid-template-rows: 150px 150px;
 }
 
-.form{
+.form {
   grid-row: 1 / 2;
 }
 
-.img{
+.img {
   grid-column: 2 / 2;
 }
+
 .circle-green-one {
   height: 225px;
   width: 225px;
@@ -30,9 +31,10 @@
 
 }
 
-.img-papa {
-
+.img-call {
+  position: relative;
   width: 69%;
   background: transparent;
-
+  left: 233px;
+  top: -41px;
 }
