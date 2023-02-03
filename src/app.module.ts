@@ -14,6 +14,7 @@ import { RouterModule } from '@angular/router';
 import { HomeRoutingModule } from './app/modules/home/home-routing.module';
 import { RegisterRoutingModule } from './app/modules/registro/register-routing.module';
 import { ContactoComponent } from './app/modules/contacto/contacto.component';
+import { BubblesComponent } from './app/layout/bubbles/bubbles.component';
 
 
 
@@ -25,6 +26,7 @@ import { ContactoComponent } from './app/modules/contacto/contacto.component';
     AppComponent,
     HeaderComponent,
     FooterComponent,
+    BubblesComponent,
    ],
   imports: [
     BrowserModule,

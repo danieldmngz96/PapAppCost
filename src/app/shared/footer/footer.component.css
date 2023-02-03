@@ -127,3 +127,8 @@ a {
   color: var(--green-good);
 }
 
+.fecha {
+  color: white;
+  margin-top: 69px;
+  font-size: 49px;
+}
