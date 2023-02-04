@@ -21,7 +21,7 @@
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 5px;
   grid-auto-rows: minmax(100px, auto);
-  margin-top: 7%;
+  margin-top: 8%;
 }
 .one {
   grid-column: 2 / 2;

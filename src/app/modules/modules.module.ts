@@ -16,12 +16,10 @@ import { ContactoComponent } from './contacto/contacto.component';
 
 @NgModule({
   declarations: [
-    RegistroComponent,
     LoginComponent,
     WelcomeComponent,
     ActivityComponent,
     DashboardComponent,
-    RegistroComponent,
   ],
   imports: [
     CommonModule,

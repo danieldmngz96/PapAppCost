@@ -43,10 +43,38 @@
         </mat-option>
       </mat-select>
     </mat-form-field>
+
+    <p class="register-p">Datos Estadisticos </p>
+    <div class="container" style="    display: flex;
+    flex-direction: column;
+    width: 89%;
+    margin: 0 auto;">
+      <mat-form-field appearance="fill">
+        <mat-label>Fecha de Nacimiento</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      &nbsp;
+      &nbsp;
+
+      <mat-form-field appearance="fill">
+        <mat-label>Nivel de estudios</mat-label>
+        <mat-select >
+          <mat-option >
+
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
   </form>
 
 </div>
-<div mat-dialog-actions>
+<div mat-dialog-actions style="display: flex;
+justify-content: center;
+">
   <button mat-button (click)="onNoClick()">Cancelar</button>
   <button mat-button>Registrarme</button>
 </div>

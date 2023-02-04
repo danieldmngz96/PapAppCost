@@ -13,5 +13,6 @@ import { AppComponent } from 'src/app/app.component';
     MaterialModule,
     SharedModule,
   ],
+  exports: [RegistroComponent]
 })
 export class RegistroModule { }
