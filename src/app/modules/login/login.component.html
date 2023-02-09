@@ -20,11 +20,13 @@
         </p>
 
         <div class="button">
-          <button type="submit" mat-button>Iniciar sesión</button>
+          <button class="login" type="submit" mat-button (click)="goToLogin()">Iniciar sesión</button>
         </div>
-        <span><a href="" style="text-decoration: none;">Recuperar Contraseña</a></span>
         <br>
-        <span><a href="" style="text-decoration: none;">Crear cuenta</a></span>
+        <br>
+        <span><a href="" style="text-decoration: none; color: #012D04;">Recuperar Contraseña</a></span>
+        <br>
+        <span><a href="" style="text-decoration: none; color: #012D04;">Crear cuenta</a></span>
       </form>
     </mat-card-content>
   </mat-card>
