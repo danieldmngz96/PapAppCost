@@ -16,7 +16,6 @@ import { ContactoComponent } from './contacto/contacto.component';
 
 @NgModule({
   declarations: [
-    LoginComponent,
     WelcomeComponent,
     ActivityComponent,
     DashboardComponent,
