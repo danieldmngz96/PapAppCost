@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   });
   constructor(
     private formBuilder: FormBuilder,
-    private readonly router: Router,
+    private router: Router,
   ) {    this.error = null;}
 
   ngOnInit(): void {

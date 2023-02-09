@@ -38,7 +38,7 @@ const routes: Routes = [
         loadChildren: () => import('./app/modules/dashboard/dashboard.module').then(m => m.DashboardModule)
       },
       {
-        path: 'Contactanos',
+        path: 'Contacto',
         loadChildren: () => import('./app/modules/contacto/contacto.module').then(m => m.ContactoModule)
       }
   ],
