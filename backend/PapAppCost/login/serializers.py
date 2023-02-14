@@ -4,5 +4,5 @@ from .models import *
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
-        model = User_Login
+        model = UserLogin
         fields = ('id_user', 'email_user', 'password_user', 'record_date_table')

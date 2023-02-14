@@ -93,10 +93,10 @@ WSGI_APPLICATION = 'PapAppCost.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'mssql',
-        'NAME': 'asqldb-papappcost',
-        'USER': 'papappcost-admin',
+        'NAME': 'asqldb-papappcost_dev',
+        'USER': 'admin-papappcost',
         'PASSWORD': 'Ppc_2023',
-        'HOST': 'server-papappcost.database.windows.net',
+        'HOST': 'server-papappcost-dev.database.windows.net',
         'PORT': '1433',
         'OPTIONS': {
             'driver': 'ODBC Driver 18 for SQL Server',

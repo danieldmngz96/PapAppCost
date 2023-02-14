@@ -1,8 +1,8 @@
 from django.db import models
 
 
-# Model for the table t_user_login
-class User_Login(models.Model):
+# Creating model for the table login_t_user_login
+class UserLogin(models.Model):
     id_user = models.AutoField(primary_key=True)
     email_user = models.CharField(max_length=255, blank=False)
     password_user = models.CharField(max_length=255, blank=False)
@@ -10,6 +10,3 @@ class User_Login(models.Model):
 
     def __str__(self):
         return self.email_user
-    
-    def get_password(self):
-        return self.password_user

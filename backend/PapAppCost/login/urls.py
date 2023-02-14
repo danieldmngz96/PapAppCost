@@ -1,11 +1,9 @@
-from django.urls import path
+from django.urls import path, re_path
 from . import views
 
 
-# urls settings to functions views
-app_name = 'login'
-
 urlpatterns = [
     #example: login/
-    path('', views.UserLoginAPI, name='sign-in'),    
+    re_path(r'^login/?$', views.UserLoginAPI),
+    re_path(r'^login/([0-9]+)/?$', views.UserLoginAPI, name='login'),
 ]

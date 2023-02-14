@@ -11,11 +11,11 @@ from .serializers import *
 @csrf_exempt
 def UserLoginAPI (request, id=0):
     if (request.method=='GET' and int(id) > 0):
-        user=User_Login.objects.filter(id_user=id)
+        user=UserLogin.objects.filter(id_user=id)
         user_serializer=UserSerializer(user, many=True)
         return JsonResponse(user_serializer.data,safe=False)
     elif request.method=='GET':   
-        users = User_Login.objects.all()
+        users = UserLogin.objects.all()
         users_serializer=UserSerializer(users,many=True)
         return JsonResponse(users_serializer.data,safe=False)
     elif request.method=='POST':
@@ -27,13 +27,13 @@ def UserLoginAPI (request, id=0):
             return JsonResponse("Oops...something went wrong.",safe=False)
     elif request.method=='PUT':
             user_data=JSONParser().parse(request)
-            user=User_Login.objects.get(id_user=user_data['id_user'])
+            user=UserLogin.objects.get(id_user=user_data['id_user'])
             users_serializer=UserSerializer(user,data=user_data)
             if users_serializer.is_valid():
                 users_serializer.save()
                 return JsonResponse("Record Updated Successfully",safe=False)
             return JsonResponse("There is some error updating the record", safe=False)
     elif request.method=='DELETE':
-        user=User_Login.objects.get(CustomerId=id)
+        user=UserLogin.objects.get(CustomerId=id)
         user.delete()
         return JsonResponse("Record Deleted Successfully",safe=False)
