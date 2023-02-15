@@ -3,7 +3,10 @@ from . import views
 
 
 urlpatterns = [
-    #example: login/
-    re_path(r'^login/?$', views.UserLoginAPI),
-    re_path(r'^login/([0-9]+)/?$', views.UserLoginAPI, name='login'),
+    # paths for whole user data
+    re_path(r'^login/?$', views.UserDataAPI),
+    re_path(r'^login/([0-9]+)/?$', views.UserDataAPI),
+
+    # path for just user login data 
+    re_path(r'^login/<srt:email_user>/?$', views.UserLoginAPI),
 ]

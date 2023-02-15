@@ -13,5 +13,9 @@ class UserData(models.Model):
     level_studies_user = models.CharField(max_length=15, blank=False)
     record_date_table = models.DateTimeField(auto_now_add=True)
 
-    def __str__(self):
-        return str(self.id_user, self.city_user, self.email_user)
+
+    # Function to get just the login data
+    def login_data(self):
+        login_data_list = [self.email_user, self.password_user]
+        return login_data_list
+

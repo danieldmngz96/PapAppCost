@@ -6,10 +6,9 @@ from django.http.response import JsonResponse
 from .models import *
 from .serializers import *
 
-# Function Views for APIS
-
+# Function to interact with API with whole user data. 
 @csrf_exempt
-def UserLoginAPI (request, id=0):
+def UserDataAPI (request, id=0):
     if (request.method=='GET' and int(id) > 0):
         user=UserData.objects.filter(id_user=id)
         user_serializer=UserSerializer(user, many=True)
@@ -37,3 +36,13 @@ def UserLoginAPI (request, id=0):
         user=UserData.objects.get(CustomerId=id)
         user.delete()
         return JsonResponse("Record Deleted Successfully",safe=False)
+
+
+
+# Function to interact with API with just user data login.
+@csrf_exempt
+def UserLoginAPI (request, email=""):
+    if (request.method=='GET' and email != ""):
+        user=UserData.objects.filter(email_user=email)
+        user_serializer=UserLoginSerializer(user, many=True)
+        return JsonResponse(user_serializer.data,safe=False)
