@@ -2,11 +2,16 @@ from django.db import models
 
 
 # Creating model for the table login_t_user_login
-class UserLogin(models.Model):
+class UserData(models.Model):
     id_user = models.AutoField(primary_key=True)
     email_user = models.CharField(max_length=255, blank=False)
     password_user = models.CharField(max_length=255, blank=False)
+    country_user = models.CharField(max_length=150, blank=False)
+    province_user = models.CharField(max_length=150, blank=False)
+    city_user = models.CharField(max_length=150, blank=False)
+    birth_date_user = models.DateField(max_length=10, blank=False)  #YYYY-MM-DD
+    level_studies_user = models.CharField(max_length=15, blank=False)
     record_date_table = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.email_user
+        return str(self.id_user, self.city_user, self.email_user)
