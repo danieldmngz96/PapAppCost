@@ -7,13 +7,17 @@
       necesidad en los campos Colombianos 🇨🇴 <br> en especial en el coste y produccion de papa 🥔<br> y optamos hacer
       nuestro proyecto de grado en este proyecto llamado <i>PapApp Cost</i> </span>
     <br>
-    <!--   <mat-form-field>
-      <input matInput placeholder="Pick a date">
-
-    </mat-form-field> -->
-    <button mat-raised-button color="primary" style="background-color: var( --green-good);
-    color: white;">¿Quieres Saber más? </button>
-
+   <div>
+<button mat-raised-button color="primary" (click)="onLogin()" style="background-color: #012D04;
+      color: white;"
+       matTooltip="Info about the action"
+       aria-label="Button that displays a tooltip when focused or hovered over">Iniciar Sesion </button>
+       &nbsp;
+       <button mat-raised-button color="primary" (click)="onLogin()" style="background-color: #012D04;
+       color: white;"
+        matTooltip="Info about the action"
+        aria-label="Button that displays a tooltip when focused or hovered over">Registrarme </button>
+   </div>
   </div>
   <div style="  width: 96%;">
 
