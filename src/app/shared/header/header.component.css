@@ -34,10 +34,11 @@ a {
     display: none;
   }
   .header-toolbar {
-    width: 133%;
+    width: 389%;
     height: 130px;
     background-color: #2D6514;
   }
+
 }
 
 @media (min-width: 800px) and (max-width: 2400px) {

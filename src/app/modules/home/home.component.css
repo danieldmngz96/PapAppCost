@@ -2,7 +2,6 @@
 
 main {
   display: grid;
-  grid-gap: 20px;
   grid-template-columns: 50% 50%;
   grid-template-rows: 150px;
   margin-top: -12%;
@@ -31,7 +30,6 @@ main {
   position: relative;
   width: 39%;
   background: transparent;
-
 }
 
 /* //Pantallas grandes (desktops de menos de 1200px) */
@@ -64,7 +62,7 @@ main {
     position: relative;
     width: 159%;
     background: transparent;
-    left: 93px;
-    top: 157px;
+    left: 192px;
+    top: -222px;
   }
 }

@@ -1,38 +1,46 @@
-nav > a {
+nav>a {
   padding: 5px;
   text-decoration: none;
 }
- a.active:hover {
+
+a.active:hover {
   background-color: #a6ff00;
 }
-.header-row{
+
+.header-row {
   width: 100%;
 }
+
 .header-toolbar {
   height: 130px;
   background-color: #2D6514;
 }
+
 a {
   margin-right: 25px;
   color: white;
 }
-.burger-menu{
+
+.burger-menu {
   color: rgb(0, 0, 0);
   float: right;
 }
 
 
 @media (min-width: 260px) and (max-width: 768px) {
-  .header-row{
+  .header-row {
     width: 50%;
   }
-  .burger-menu{
+
+  .burger-menu {
     color: rgb(255, 255, 255);
   }
-  .desktop-menu{
+
+  .desktop-menu {
     color: #fff;
     display: none;
   }
+
   .header-toolbar {
     background-color: #2D6514;
     width: auto;
@@ -42,11 +50,12 @@ a {
 }
 
 @media (min-width: 800px) and (max-width: 2400px) {
-  .desktop-menu{
+  .desktop-menu {
     color: #fff;
   }
-  .burger-menu{
-    color: rgba(0,0, 0, 0.0);
+
+  .burger-menu {
+    color: rgba(0, 0, 0, 0.0);
     display: none;
     float: right;
   }
@@ -56,61 +65,79 @@ a {
 .activo {
   background-color: #ccc;
 }
+
 .activo:hover {
   background-color: var(--green-light)
 }
+
 .activo a {
   color: green;
 }
+
 .header-toolbar {
 
   height: 130px;
   background-color: #2D6514;
 }
-nav > a {
+
+nav>a {
   padding: 5px;
   text-decoration: none;
 }
- a.active:hover {
+
+a.active:hover {
   background-color: #a6ff00;
 }
-.header-row{
+
+.header-row {
   width: 100%;
 }
+
 .header-toolbar {
 
   background-color: #2D6514;
   display: flex;
 }
+
 a {
   margin-right: 25px;
   color: white;
 }
-.burger-menu{
+
+.burger-menu {
   color: rgb(0, 0, 0);
   float: right;
 }
 
 
 @media (min-width: 260px) and (max-width: 768px) {
-  .header-row{
+  .header-row {
     width: 50%;
   }
-  .burger-menu{
+
+  .header-toolbar {
+    width: 389%;
+    position: absolute;
+    top: 2340px !important;
+  }
+
+  .burger-menu {
     color: rgb(255, 255, 255);
   }
-  .desktop-menu{
+
+  .desktop-menu {
     color: #fff;
     display: none;
   }
 }
 
 @media (min-width: 800px) and (max-width: 2400px) {
-  .desktop-menu{
+  .desktop-menu {
     color: #fff;
   }
-  .burger-menu{
-    color: rgba(0,0, 0, 0.0);
+
+  .burger-menu {
+    color: rgba(0, 0, 0, 0.0);
     display: none;
     float: right;
   }
@@ -120,9 +147,11 @@ a {
 .activo {
   background-color: #012D04;
 }
+
 .activo:hover {
   background-color: var(--green-light)
 }
+
 .activo a {
   color: var(--green-good);
 }
