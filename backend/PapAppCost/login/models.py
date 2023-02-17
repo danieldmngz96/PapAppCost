@@ -6,6 +6,8 @@ class UserData(models.Model):
     id_user = models.AutoField(primary_key=True)
     email_user = models.CharField(max_length=255, blank=False)
     password_user = models.CharField(max_length=255, blank=False)
+    name_user = models.CharField(max_length=255, blank=False, default="Pending")
+    nickname_user = models.CharField(max_length=255, blank=False, default="Pending")
     country_user = models.CharField(max_length=150, blank=False)
     province_user = models.CharField(max_length=150, blank=False)
     city_user = models.CharField(max_length=150, blank=False)

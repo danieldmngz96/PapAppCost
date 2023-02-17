@@ -41,8 +41,8 @@ def UserDataAPI (request, id=0):
 
 # Function to interact with API with just user data login.
 @csrf_exempt
-def UserLoginAPI (request, email=""):
-    if (request.method=='GET' and email != ""):
-        user=UserData.objects.filter(email_user=email)
+def UserLoginAPI (request, id=0):
+    if (request.method=='GET' and int(id) > 0):
+        user=UserData.objects.filter(id_user=id)
         user_serializer=UserLoginSerializer(user, many=True)
         return JsonResponse(user_serializer.data,safe=False)
