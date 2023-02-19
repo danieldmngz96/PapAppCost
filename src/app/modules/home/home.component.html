@@ -14,7 +14,7 @@
          aria-label="Button that displays a tooltip when focused or hovered over">Iniciar Sesion </button> -->
          <mat-card style="background-color: var(--green-light);">
           <mat-card-header>
-            <mat-card-title>Iniciar sesión</mat-card-title>
+            <mat-card-title style="margin: 0 auto;">Iniciar sesión</mat-card-title>
           </mat-card-header>
           <mat-card-content>
             <form >
@@ -37,11 +37,16 @@
     <br>
     <br>
     <br>
-    <button mat-raised-button color="primary" (click)="onLogin()" style="background-color: #012D04;
-    color: white;
-    margin-left: 65px;"
-     matTooltip="Si no estas registrado te puedes registrar aqui"
-     aria-label="Button that displays a tooltip when focused or hovered over">Registrarme </button>
+    <div>
+
+    </div>
+    <div style="display: flex;
+    justify-content: center;">
+      <button mat-raised-button color="primary" (click)="onRegister()" style="background-color: #012D04;
+      color: white;"
+       matTooltip="Si no estas registrado te puedes registrar aqui">Registrarme </button>
+    </div>
+
   </div>
   <div style="  width: 96%;">
 
