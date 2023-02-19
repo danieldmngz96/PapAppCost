@@ -8,17 +8,40 @@
       nuestro proyecto de grado en este proyecto llamado <i>PapApp Cost</i> </span>
     <br> -->
     <div style="display: flex;  align-items: center; justify-content: center;">
-      <button mat-raised-button color="primary" (click)="onLogin()" style="background-color: #012D04;
+      <!-- <button mat-raised-button color="primary" (click)="onLogin()" style="background-color: #012D04;
         color: white;"
          matTooltip="Info about the action"
-         aria-label="Button that displays a tooltip when focused or hovered over">Iniciar Sesion </button>
-         &nbsp;
-         <button mat-raised-button color="primary" (click)="onLogin()" style="background-color: #012D04;
-         color: white;"
-          matTooltip="Info about the action"
-          aria-label="Button that displays a tooltip when focused or hovered over">Registrarme </button>
+         aria-label="Button that displays a tooltip when focused or hovered over">Iniciar Sesion </button> -->
+         <mat-card style="background-color: var(--green-light);">
+          <mat-card-header>
+            <mat-card-title>Iniciar sesión</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <form >
+              <mat-form-field>
+                <input matInput placeholder="Nombre de usuario" name="username" required>
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput type="password" placeholder="Contraseña"  required>
+              </mat-form-field>
+              <button mat-raised-button color="primary" style="background-color: #012D04;
+              color: white;
+              margin-left: 65px;" type="submit">Iniciar sesión</button>
+            </form>
+          </mat-card-content>
+        </mat-card>
+
+
 
     </div>
+    <br>
+    <br>
+    <br>
+    <button mat-raised-button color="primary" (click)="onLogin()" style="background-color: #012D04;
+    color: white;
+    margin-left: 65px;"
+     matTooltip="Si no estas registrado te puedes registrar aqui"
+     aria-label="Button that displays a tooltip when focused or hovered over">Registrarme </button>
   </div>
   <div style="  width: 96%;">
 
