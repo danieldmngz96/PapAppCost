@@ -1,10 +1,9 @@
-
-
 main {
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 150px;
   margin-top: -12%;
+
 }
 
 .circle-green-one {
@@ -48,7 +47,7 @@ main {
 }
 
 /* //Pantallas muy pequeñas (móviles en portrait de menos de 576px) */
-@media (max-width: 575.98px) {
+@media (min-width: 260px) and (max-width: 768px)  {
   .circle-green-one {
     display: none;
   }
@@ -59,10 +58,12 @@ main {
   }
 
   .img-papa {
-    position: relative;
-    width: 159%;
-    background: transparent;
-    left: 192px;
-    top: -222px;
+    display: none;
+    width: 0px !important;;
+  }
+  main {
+    margin-top: 20%;
+    margin-left: 21%;
+
   }
 }

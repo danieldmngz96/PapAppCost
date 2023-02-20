@@ -34,9 +34,8 @@ a {
     display: none;
   }
   .header-toolbar {
-
-    height: 130px;
-    background-color: #2D6514;
+    height: 171px;
+    background-color: var(--green-dark);
   }
 
 }
