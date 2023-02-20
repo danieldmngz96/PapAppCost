@@ -116,9 +116,9 @@ a {
   }
 
   .header-toolbar {
-    width: 389%;
+    width: 100%;
     position: absolute;
-    top: 2340px !important;
+
   }
 
   .burger-menu {
