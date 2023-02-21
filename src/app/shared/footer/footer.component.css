@@ -47,6 +47,16 @@ a {
     position: absolute;
     top: 158px;
   }
+  .fecha{
+    font-size: 24px !important;
+  }
+  .img-resposive{
+    width: 150px;
+  }
+  .text-responsive{
+    text-align: center;
+    font-size: 15px;
+  }
 }
 
 @media (min-width: 800px) and (max-width: 2400px) {

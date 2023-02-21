@@ -21,7 +21,13 @@ a {
   float: right;
 }
 
-
+@media (min-width: 100px) and (max-width: 454px){
+  .header-toolbar {
+    height: 171px;
+    background-color: var(--green-dark);
+     width: 435px !important;
+  }
+}
 @media (min-width: 260px) and (max-width: 768px) {
   .header-row{
     width: 50%;
@@ -36,6 +42,7 @@ a {
   .header-toolbar {
     height: 171px;
     background-color: var(--green-dark);
+
   }
 
 }
