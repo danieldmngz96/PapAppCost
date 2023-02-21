@@ -6,6 +6,23 @@ main {
 
 }
 
+input {
+  &.is-valid {
+    border: 2px solid greenyellow;
+  }
+  &.is-invalid {
+    border: 2px solid red;
+  }
+}
+
+.messages{
+  opacity: 0;
+  transition: opacity .5s ease-in;
+  &.active{
+    opacity: 1;
+  }
+}
+
 .circle-green-one {
   height: 225px;
   width: 225px;
@@ -31,12 +48,13 @@ main {
   background: transparent;
 }
 
-.btn-register{
+.btn-register {
   background-color: var(--green-good);
   color: white;
   width: 20%;
 }
-.btn-login{
+
+.btn-login {
   background-color: var(--green-good);
   color: white;
   width: 100%;
@@ -46,7 +64,7 @@ main {
 
 
 /* //Pantallas muy pequeñas (móviles en portrait de menos de 576px) */
-@media (min-width: 260px) and (max-width: 768px)  {
+@media (min-width: 260px) and (max-width: 768px) {
   .circle-green-one {
     display: none;
   }
@@ -58,17 +76,23 @@ main {
 
   .img-papa {
     display: none;
-    width: 0px !important;;
+    width: 0px !important;
+    ;
   }
+
   main {
     margin-top: 20%;
-
+    background-color: var(--green-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 22%;
 
   }
 
-  .btn-register{
+  .btn-register {
     background-color: var(--green-good);
     color: white;
-    width: 425px !important;
+    width: 125px !important;
   }
 }

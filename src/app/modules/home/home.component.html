@@ -1,6 +1,6 @@
-<main style="background-color: var( --green-light);">
-  <div style="background-color: var( --green-light); margin-left: 65px;">
-    <div style="display: flex;  align-items: center; justify-content: center;">
+<main class="container">
+  <div style="background-color: var( --green-light);" class="row align-items-center">
+    <div style="display: flex;  align-items: center; justify-content: center;" class="col-sm">
 
       <form (ngSubmit)="onSubmit()" [formGroup]="form">
         <mat-card style="background-color: var(--green-light);">
@@ -21,7 +21,7 @@
 
             <br>
             <mat-form-field>
-              <input matInput type="password" placeholder="Contraseña" required formGroupName="password">
+              <input matInput type="password" placeholder="Contraseña" required formGroupName="password"  [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
             </mat-form-field>
             <mat-error>
               <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
