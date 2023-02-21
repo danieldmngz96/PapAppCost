@@ -4,15 +4,21 @@ import { RegistroComponent } from '../registro/registro.component';
 import { MatDialog } from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
 import { Router } from '@angular/router';
+import { FormBuilder, Validators } from '@angular/forms';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
 export class HomeComponent implements OnInit {
-  card: string = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+  form = this.formBuilder.group({
+    username: ["", [Validators.required, Validators.email]],
+    password: ["", [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$')]]
+  });
   constructor(    private readonly router: Router,
-    public dialog: MatDialog) { }
+    public dialog: MatDialog,
+    private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
   }
@@ -27,5 +33,8 @@ export class HomeComponent implements OnInit {
     const dialogRef = this.dialog.open(LoginComponent, {
       width: '550px',
     });
+  }
+  get isNameUserInvalid() {
+    return this.form.touched && this.form.invalid;
   }
 }
