@@ -31,6 +31,10 @@ main {
   background: transparent;
 }
 
+.btn-register{
+  background-color: #012D04;
+  color: white;
+}
 /* //Pantallas grandes (desktops de menos de 1200px) */
 @media (max-width: 1199.98px) {
 
