@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {BubblesComponent} from 'src/app/layout/bubbles/bubbles.component';
+import { BubblesComponent } from 'src/app/layout/bubbles/bubbles.component';
 import { RegistroComponent } from '../registro/registro.component';
 import { MatDialog } from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
@@ -12,23 +12,27 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 
 export class HomeComponent implements OnInit {
+
   form = this.formBuilder.group({
-    username: ["", [Validators.required, Validators.email]],
-    password: ["", [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$')]]
+    username: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$')]]
   });
-  constructor(    private readonly router: Router,
+
+  submitted = false;
+  constructor(private readonly router: Router,
     public dialog: MatDialog,
     private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
   }
-  onRegister(){
+  get f() { return this.form.controls; }
+  onRegister() {
     this.router.navigate(['/Register']);
     const dialogRef = this.dialog.open(RegistroComponent, {
       width: '550px',
     });
   }
-  onLogin(){
+  onLogin() {
     this.router.navigate(['/Login']);
     const dialogRef = this.dialog.open(LoginComponent, {
       width: '550px',
@@ -37,4 +41,15 @@ export class HomeComponent implements OnInit {
   get isNameUserInvalid() {
     return this.form.touched && this.form.invalid;
   }
+  onSubmit() {
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.form.invalid) {
+      return ;
+    }
+
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.form.value))
+  }
+
 }
