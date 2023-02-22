@@ -4,7 +4,7 @@ import { RegistroComponent } from '../registro/registro.component';
 import { MatDialog } from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
 import { Router } from '@angular/router';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

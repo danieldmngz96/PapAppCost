@@ -42,10 +42,10 @@ a {
   }
 
   .header-toolbar {
-    background-color: #2D6514;
+    background-color: var(--green-dark);
     width: auto;
     position: absolute;
-    top: 158px;
+
   }
   .fecha{
     font-size: 24px !important;
