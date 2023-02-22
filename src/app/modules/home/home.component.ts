@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { BubblesComponent } from 'src/app/layout/bubbles/bubbles.component';
 import { RegistroComponent } from '../registro/registro.component';
 import { MatDialog } from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -12,16 +12,17 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 
 export class HomeComponent implements OnInit {
-
   form = this.formBuilder.group({
     username: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$')]]
   });
-
   submitted = false;
   constructor(private readonly router: Router,
     public dialog: MatDialog,
-    private formBuilder: FormBuilder) { }
+    private formBuilder: FormBuilder,
+    private http: HttpClient) {
+
+  }
 
   ngOnInit(): void {
   }
@@ -43,13 +44,15 @@ export class HomeComponent implements OnInit {
   }
   onSubmit() {
     this.submitted = true;
-
     // stop here if form is invalid
-    if (this.form.invalid) {
-      return ;
-    }
+      if (this.form.valid) {
+        this.http.post('https://web-services-papappcost-umb.onrender.com/login/signup', this.form.value)?.subscribe(response => {
+          console.log(response);
+        }, error => {
+          console.log(error);
+        });
+      }
 
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.form.value))
+    }
   }
 
-}
