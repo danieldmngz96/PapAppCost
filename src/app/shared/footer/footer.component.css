@@ -118,7 +118,7 @@ a {
   .header-toolbar {
     width: 389%;
     position: absolute;
-    top: 2340px !important;
+    bottom: 0;
   }
 
   .burger-menu {
@@ -160,4 +160,11 @@ a {
   color: white;
   margin-top: 69px;
   font-size: 49px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-top:50px;
 }
