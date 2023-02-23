@@ -1,3 +1,51 @@
-<i>funcionaa</i>
+<div class="container" style="display: flex; align-items: center; justify-content: center; margin-top: 16%; " >
+    <form (ngSubmit)="onSubmit()" [formGroup]="form" class="row">
+      <mat-card style="background-color: var(--green-light);" class="col">
+        <mat-card-header>
+          <mat-card-title style="margin: 0 auto;">Iniciar sesión</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-form-field>
+            <input matInput type="text" placeholder="Nombre de usuario" name="username" required
+              formGroupName="username" [ngClass]="{ 'is-invalid': submitted && username.invalid }">
+          </mat-form-field>
+          <mat-error>
+            <div *ngIf="submitted && username.invalid" class="invalid-feedback">
+              <b *ngIf="form.get('username')?.hasError('required')">Usuario es requerido</b>
+              <b *ngIf="form.get('username')?.hasError('email')">Usuario debe ser tipo email por ej: PapApp@admin.com</b>
+            </div>
+          </mat-error>
+
+          <br>
+          <mat-form-field>
+            <input matInput type="password" placeholder="Contraseña" required formGroupName="password"  [ngClass]="{ 'is-invalid': submitted && password.invalid }">
+          </mat-form-field>
+          <mat-error>
+            <div *ngIf="submitted && password.invalid" class="invalid-feedback">
+              <b *ngIf="form.get('password')?.hasError('required')">Contraseña es requerida</b>
+              <b *ngIf="form.get('password')?.hasError('pattern')">Contraseña no cumple con almenos tenga al menos una letra mayúscula, una letra minúscula y un número, puedes usar </b>
+            </div>
+          </mat-error>
+          <br>
+          <button mat-raised-button class="btn-login"
+            style="margin: 0 auto !important; " type="submit"
+            >Iniciar sesión</button>
+          <br>
+          <div [class.active]="isNameUserInvalid">
+            <mat-error>
+                    <strong *ngIf="form.get('username')?.invalid || form.get('password')?.invalid || isNameUserInvalid == true">Este campo es requerido</strong>
+            </mat-error>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      <br>
+      <br>
+      <div style="display: flex;
+      justify-content: center;">
+        <button mat-raised-button (click)="onRegister()" class="btn-register"
+          matTooltip="Si no estas registrado te puedes registrar aqui">Registrarme </button>
+      </div>
+    </form>
+  </div>
 
 

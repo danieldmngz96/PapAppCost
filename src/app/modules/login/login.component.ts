@@ -1,40 +1,50 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { Router } from '@angular/router';
+import { RegistroComponent } from '../registro/registro.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  username: string;
-  password: string;
-  error: string | null;
-  formularioLogin: FormGroup = this.formBuilder.group({
-    username: new FormControl(''),
-    password: new FormControl(''),
+  [x: string]: any;
+  username: any = '';
+  password: any = '';
+  submitted = false;
+  form: FormGroup = this.formBuilder.group({
+    username: ['', [Validators.required, Validators.email]],
+    password: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(8),
+        Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*d)[a-zA-Zd]{8,}$'),
+      ],
+    ],
   });
-  constructor(
-    private formBuilder: FormBuilder,
+  constructor(private formBuilder: FormBuilder,
     private router: Router,
-  ) {    this.error = null;
-   this.username = ""
-   this.password = ""
+    public dialog: MatDialog,) {}
+
+  ngOnInit(): void {}
+  get f() {
+    return this.form.controls;
   }
-
-
-
-  ngOnInit(): void {
-
-  }
- /*  submit() {
+  /*  submit() {
     if (this.form.valid) {
       this.submitEM.emit(this.form.value);
     }
   } */
-  goToLogin(){
-    this.router.navigate(['/Welcome'])
+  goToLogin() {
+    this.router.navigate(['/Welcome']);
   }
 
   @Output() submitEM = new EventEmitter();
@@ -51,4 +61,25 @@ export class LoginComponent implements OnInit {
       alert('Nombre de usuario y/o contraseña incorrectos.');
     }
   }
+  get isNameUserInvalid() {
+    return this.form.touched && this.form.invalid;
+  }
+  /*  onSubmit() {
+    this.submitted = true;
+    // stop here if form is invalid
+      if (this.form.valid) {
+        this.http.post('https://web-services-papappcost-umb.onrender.com/login/signup', this.form.value)?.subscribe(response => {
+          console.log(response);
+        }, error => {
+          console.log(error);
+        });
+      }
+
+    } */
+    onRegister() {
+      this.router.navigate(['/Register']);
+      const dialogRef = this.dialog.open(RegistroComponent, {
+        width: '550px',
+      });
+    }
 }

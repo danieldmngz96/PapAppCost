@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  get f() { return this.form.controls; }
+
   onRegister() {
     this.router.navigate(['/Register']);
     const dialogRef = this.dialog.open(RegistroComponent, {
@@ -39,20 +39,6 @@ export class HomeComponent implements OnInit {
       width: '550px',
     });
  */  }
-  get isNameUserInvalid() {
-    return this.form.touched && this.form.invalid;
-  }
-  onSubmit() {
-    this.submitted = true;
-    // stop here if form is invalid
-      if (this.form.valid) {
-        this.http.post('https://web-services-papappcost-umb.onrender.com/login/signup', this.form.value)?.subscribe(response => {
-          console.log(response);
-        }, error => {
-          console.log(error);
-        });
-      }
 
-    }
   }
 

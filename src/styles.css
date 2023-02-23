@@ -9,15 +9,34 @@ body {
 }
 
 :root {
+  /* Colores verde */
   --green-dark: #2B580C;
   --green-good: #639A67;
   --green-light: #efffe4;
+  --green-lighter: #e6f8ea;
+  --green-lightest: #f5fffa;
+
+  /* Colores amarillo */
   --yellow: #D9BF77;
-  /*Variables para circilos*/
-  --circle-background-one: #CCD6A6;
-  --circle-background-two: #DAE2B6;
-  --circle-background-theree: #BFD8B8;
-  --circle-background-four: #F1F7E7;
+  --yellow-light: #F5ECCE;
+  --yellow-dark: #B19664;
+
+  /* Colores naranja */
+  --orange: #FFA500;
+  --orange-light: #FFDAB9;
+
+  /* Colores rojo */
+  --red: #FF0000;
+  --red-light: #FFC1C1;
+
+  /* Colores gris */
+  --gray-light: #F2F2F2;
+  --gray: #BEBEBE;
+  --gray-dark: #A9A9A9;
+
+  /* Colores azul */
+  --blue: #0072C6;
+  --blue-light: #B2D1EC;
 }
 
 html {
