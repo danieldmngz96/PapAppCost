@@ -25,9 +25,9 @@
     <p class="register-p">Ubicacion </p>
     <mat-form-field appearance="fill" >
       <mat-label>Departamento</mat-label>
-      <mat-select (selectionChange)="lookForDepartamentos()" [(value)]="selectedMunicipio" >
-        <mat-option *ngFor="let municipio of municipios" [value]="municipio">
-          {{municipio}}
+      <mat-select (selectionChange)="lookForDepartamentos($event)" [(value)]="selectedMunicipio" >
+        <mat-option *ngFor="let item of departamentos" [value]="item">
+          {{item}}
         </mat-option>
       </mat-select>
     </mat-form-field>
@@ -38,8 +38,8 @@
     <mat-form-field appearance="fill" >
       <mat-label>Municipio</mat-label>
       <mat-select >
-        <mat-option  *ngFor="let depto of departamentos"  >
-          {{depto}}
+        <mat-option  *ngFor="let muni of municipios" [value]="muni.municipio" >
+          {{muni.municipio}}
         </mat-option>
       </mat-select>
     </mat-form-field>
@@ -62,8 +62,8 @@
 
       <mat-form-field appearance="fill">
         <mat-label>Nivel de estudios</mat-label>
-        <mat-select >
-          <mat-option >
+        <mat-select>
+          <mat-option>
 
           </mat-option>
         </mat-select>
@@ -76,5 +76,9 @@
 justify-content: center;
 ">
   <button mat-button (click)="onNoClick()">Cancelar</button>
+  &nbsp;
+  &nbsp;
+  &nbsp;
+
   <button mat-button>Registrarme</button>
 </div>

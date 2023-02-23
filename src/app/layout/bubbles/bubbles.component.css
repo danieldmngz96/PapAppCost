@@ -31,3 +31,12 @@
   grid-column: 2 / 2;
   grid-row: 1;
 }
+
+@media (min-width: 260px) and (max-width: 768px)  {
+  .circle-green-one {
+    display: none;
+  }
+  .circle-green-two {
+    display: none;
+  }
+}

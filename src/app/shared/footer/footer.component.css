@@ -42,10 +42,20 @@ a {
   }
 
   .header-toolbar {
-    background-color: #2D6514;
+    background-color: var(--green-dark);
     width: auto;
     position: absolute;
-    top: 158px;
+
+  }
+  .fecha{
+    font-size: 24px !important;
+  }
+  .img-resposive{
+    width: 150px;
+  }
+  .text-responsive{
+    text-align: center;
+    font-size: 15px;
   }
 }
 
@@ -116,9 +126,8 @@ a {
   }
 
   .header-toolbar {
-    width: 389%;
+    width: 100%;
     position: absolute;
-    bottom: 0;
   }
 
   .burger-menu {

@@ -1,8 +1,9 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { DepartamentosService } from 'src/app/service/departamentos.service';
 import { HeaderComponent } from 'src/app/shared/header/header.component';
-import {colombia} from '../registro/JSON/colombia'
+
 interface departament {
   value: string;
 }
@@ -12,39 +13,46 @@ interface departament {
   styleUrls: ['./registro.component.css']
 })
 export class RegistroComponent implements OnInit {
-  diccionario = colombia
-  municipios = Object.keys(this.diccionario)
-  departamentos = []
+  municipios: any[] = []
+  departamentos: any = []
   selectedMunicipio = null
 
-  myForm:FormGroup = this.formBuilder.group({
-    email: [null,Validators.required],
-    confirmEmail: [null,Validators.required],
-    password: [null,Validators.required],
-    confirmpassword: [null,Validators.required],
+  myForm: FormGroup = this.formBuilder.group({
+    email: [null, Validators.required],
+    confirmEmail: [null, Validators.required],
+    password: [null, Validators.required],
+    confirmpassword: [null, Validators.required],
 
-    municipio:  [null,Validators.required],
+    municipio: [null, Validators.required],
 
   })
 
-  constructor( public dialogRef: MatDialogRef<HeaderComponent>,
+  constructor(public dialogRef: MatDialogRef<HeaderComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private formBuilder: FormBuilder
-    ) { }
+    private formBuilder: FormBuilder,
+    private service: DepartamentosService
+  ) { }
 
 
   ngOnInit(): void {
-
-    console.log(Object.keys(colombia));
-
+    this.service.getDepartamentos().subscribe(data => {
+      this.departamentos = data
+      console.log(this.departamentos);
+    });
   }
-  onNoClick():void {
+  onNoClick(): void {
     this.dialogRef.close();
   }
 
-  lookForDepartamentos() {
-    console.log(this.selectedMunicipio);
+  lookForDepartamentos(event: any) {
+    console.log(event);
 
-    this.departamentos = eval(`this.diccionario.${this.selectedMunicipio}`)
+ /*    console.log(this.departamentos); */
+    this.service.getMunicipiosporDepartamento(event.value).subscribe(data => {
+      this.municipios = data;
+      console.log(data);
+
+    }
+    )
   }
 }

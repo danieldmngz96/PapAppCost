@@ -1,24 +1,64 @@
-<main style="background-color: var( --green-light);">
-  <div style="background-color: var( --green-light); margin-left: 65px;">
-    <!-- <h1>Bienvenido a PapApp Cost !</h1>
-    <br>
-    <h3>¿Quienes Somos? </h3>
-    <span>Somos dos estudiantes de Ingenieria de Software de la Universidad Manuela Betran, <br> que como vieron una
-      necesidad en los campos Colombianos 🇨🇴 <br> en especial en el coste y produccion de papa 🥔<br> y optamos hacer
-      nuestro proyecto de grado en este proyecto llamado <i>PapApp Cost</i> </span>
-    <br> -->
-    <div style="display: flex;  align-items: center; justify-content: center;">
-      <button mat-raised-button color="primary" (click)="onLogin()" style="background-color: #012D04;
-        color: white;"
-         matTooltip="Info about the action"
-         aria-label="Button that displays a tooltip when focused or hovered over">Iniciar Sesion </button>
-         &nbsp;
-         <button mat-raised-button color="primary" (click)="onLogin()" style="background-color: #012D04;
-         color: white;"
-          matTooltip="Info about the action"
-          aria-label="Button that displays a tooltip when focused or hovered over">Registrarme </button>
+<main class="container">
+  <div style="background-color: var( --green-light);" class="row align-items-center">
+    <div style="display: flex;  align-items: center; justify-content: center;" class="col-sm">
+
+      <form (ngSubmit)="onSubmit()" [formGroup]="form">
+        <mat-card style="background-color: var(--green-light);">
+          <mat-card-header>
+            <mat-card-title style="margin: 0 auto;">Iniciar sesión</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <mat-form-field>
+              <input matInput type="text" placeholder="Nombre de usuario" name="username" required
+                formGroupName="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+            </mat-form-field>
+            <mat-error>
+              <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                <b *ngIf="form.get('username')?.hasError('required')">Usuario es requerido</b>
+                <b *ngIf="form.get('username')?.hasError('email')">Usuario debe ser tipo email por ej: PapApp@admin.com</b>
+              </div>
+            </mat-error>
+
+            <br>
+            <mat-form-field>
+              <input matInput type="password" placeholder="Contraseña" required formGroupName="password"  [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+            </mat-form-field>
+            <mat-error>
+              <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                <b *ngIf="form.get('password')?.hasError('required')">Contraseña es requerida</b>
+                <b *ngIf="form.get('password')?.hasError('pattern')">Contraseña no cumple con almenos tenga al menos una letra mayúscula, una letra minúscula y un número, puedes usar </b>
+              </div>
+            </mat-error>
+            <br>
+            <button mat-raised-button color="primary" class="btn-login"
+              style="margin: 0 auto !important; " type="submit"
+              >Iniciar sesión</button>
+            <br>
+            <div [class.active]="isNameUserInvalid">
+              <mat-error>
+                <!--      <strong *ngIf="form.get('username')?.invalid || form.get('password')?.invalid || isNameUserInvalid == true">Este campo es requerido</strong> -->
+              </mat-error>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </form>
+
+
+
 
     </div>
+    <br>
+    <br>
+    <br>
+    <div>
+
+    </div>
+    <div style="display: flex;
+    justify-content: center;">
+      <button mat-raised-button color="primary" (click)="onRegister()" class="btn-register"
+        matTooltip="Si no estas registrado te puedes registrar aqui">Registrarme </button>
+    </div>
+
   </div>
   <div style="  width: 96%;">
 

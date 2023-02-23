@@ -10,7 +10,7 @@ nav > a {
 }
 .header-toolbar {
   height: 130px;
-  background-color: #2D6514;
+  background-color: var(--green-dark);;
 }
 a {
   margin-right: 25px;
@@ -21,7 +21,13 @@ a {
   float: right;
 }
 
+@media (min-width: 100px) and (max-width: 454px){
+  .header-toolbar {
+    height: 171px;
+    background-color: var(--green-dark);
 
+  }
+}
 @media (min-width: 260px) and (max-width: 768px) {
   .header-row{
     width: 50%;
@@ -34,9 +40,8 @@ a {
     display: none;
   }
   .header-toolbar {
-    width: 389%;
-    height: 330px;
-    background-color: #2D6514;
+    height: 171px;
+    background-color: var(--green-dark);
   }
 
 }
