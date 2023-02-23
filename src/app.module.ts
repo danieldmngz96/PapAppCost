@@ -15,6 +15,7 @@ import { HomeRoutingModule } from './app/modules/home/home-routing.module';
 import { RegisterRoutingModule } from './app/modules/registro/register-routing.module';
 import { ContactoComponent } from './app/modules/contacto/contacto.component';
 import { BubblesComponent } from './app/layout/bubbles/bubbles.component';
+import { LoginModule } from './app/modules/login/login.module';
 
 
 

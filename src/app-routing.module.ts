@@ -10,20 +10,8 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: '/HomePapApp',
+        redirectTo: '/login-PapApp',
         pathMatch: 'full',
-      },
-      {
-        path: 'HomePapApp',
-        loadChildren: () => import('./app/modules/home/home.module').then(m => m.HomeModule)
-      },
-      {
-        path: 'Register',
-        loadChildren: () => import('./app/modules/registro/registro.module').then(m => m.RegistroModule)
-      },
-      {
-        path: 'Login',
-        loadChildren: () => import('./app/modules/login/login.module').then(m => m.LoginModule)
       },
       {
         path: 'Welcome',
@@ -40,7 +28,24 @@ const routes: Routes = [
       {
         path: 'Contacto',
         loadChildren: () => import('./app/modules/contacto/contacto.module').then(m => m.ContactoModule)
-      }
+      },
+      {
+        path: "auth",
+        children: [
+          {
+            path: 'login-PapApp',
+            loadChildren: () => import('./app/modules/home/home.module').then(m => m.HomeModule)
+          },
+          {
+            path: 'Register',
+            loadChildren: () => import('./app/modules/registro/registro.module').then(m => m.RegistroModule)
+          },
+          {
+            path: 'Login',
+            loadChildren: () => import('./app/modules/login/login.module').then(m => m.LoginModule)
+          },
+        ],
+      },
   ],
 }];
 

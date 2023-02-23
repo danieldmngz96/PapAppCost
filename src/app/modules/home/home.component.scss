@@ -1,9 +1,8 @@
 main {
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 150px;
-  margin-top: -12%;
-
+  grid-template-rows: 50%;
+  margin-top: 14%;
 }
 
 /* input {
@@ -51,7 +50,7 @@ main {
 .btn-register {
   background-color: var(--green-good);
   color: white;
-  width: 20%;
+  width: 100%;
 }
 
 .btn-login {

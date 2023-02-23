@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MaterialModule } from 'src/app/material/material.module';
-import { SharedModule } from 'src/app/shared/shared.module';
 import { LoginComponent } from './login.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { AppRoutingModule } from '../app-routing.module';
+import { MaterialModule } from 'src/app/material/material.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { LoginRoutingModule } from './login-routing.module';
 
 
 
@@ -10,9 +13,11 @@ import { LoginComponent } from './login.component';
   declarations: [LoginComponent],
   imports: [
     CommonModule,
-    MaterialModule,
     SharedModule,
+    LoginRoutingModule,
+    MaterialModule,
+    ReactiveFormsModule
   ],
-  exports:[LoginComponent ]
+  exports: [LoginComponent]
 })
 export class LoginModule { }

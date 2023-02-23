@@ -34,11 +34,11 @@ export class HomeComponent implements OnInit {
     });
   }
   onLogin() {
-    this.router.navigate(['/Login']);
-    const dialogRef = this.dialog.open(LoginComponent, {
+    this.router.navigate(['/auth/Login']);
+   /*  const dialogRef = this.dialog.open(LoginComponent, {
       width: '550px',
     });
-  }
+ */  }
   get isNameUserInvalid() {
     return this.form.touched && this.form.invalid;
   }
