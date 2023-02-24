@@ -1,45 +1,66 @@
 <main class="container">
   <!--Imagen de papas animaciones etc -->
   <div style="background-color: var( --green-light);" class="row align-items-center">
-    <div class="col-sm" >
-      <div style="  width: 96%;">
-        <img src="./../../../assets/potatoes-2795_1920 1.png" alt="Papa cruda" class="img-papa">
+    <div class="col-sm">
+      <!-- Slider main container -->
+      <!-- Slider main container -->
+      <div class="swiper" style="margin: 0 auto;">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <img src="./../../../assets/potatoes-2795_1920 1.png" alt="Papa cruda" class="img-papa">
+          </div>
+          <div class="swiper-slide"><img src="./../../../assets/potatoes-2795_1920 1.png" alt="Papa cruda" ></div>
+          <div class="swiper-slide"><img src="./../../../assets/potatoes-2795_1920 1.png" alt="Papa cruda" ></div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev" style="color: var(--green-good);" (click)="lookSwiper()"></div>
+        <div class="swiper-button-next"  style="color: var(--green-good);" (click)="lookSwiper()"></div>
+
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
       </div>
+
     </div>
     <br>
     <br>
     <br>
   </div>
-    <!--Opciones de login -->
-  <mat-card style="height: 248%;
+  <!--Opciones de login -->
+  <mat-card style="height: 129%;
   margin-right: 36px;">
-  <mat-card-header>
-    <img src="../../../assets/papa.png" alt="logo PapApp" width="20%">
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp; &nbsp; &nbsp;
-    <mat-card-content style="text-align: center; font-size: 45px; font-weight: bold; color: var(--green-good);">PapApp</mat-card-content>
-  </mat-card-header>
-  <mat-card-content>
-    <br>
-    <br>
-    <i>Si ya usas PapApp Cost:</i>
-    <br>
-    <br>
-    <button mat-raised-button color="primary"  class="btn-register" (click)="onLogin()"
-    matTooltip="Empieza atener el control de tus cultivos de PapApp aqui">Inicia Sesión </button>
-    <br>
-    <br>
-    <br>
-    <br>
-    <i>Si es tu primera vez usando PapApp Cost:</i>
-    <br>
-    <br>
-    <button mat-raised-button color="primary" (click)="onRegister()" class="btn-register"
-    matTooltip="¡Que esperas para registrate hoy gratis!">Registrarme </button>
-  </mat-card-content>
+    <mat-card-header>
+      <img src="../../../assets/papa.png" alt="logo PapApp" width="20%">
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp; &nbsp; &nbsp;
+      <mat-card-content
+        style="text-align: center; font-size: 45px; font-weight: bold; color: var(--green-good);">PapApp</mat-card-content>
+    </mat-card-header>
+    <mat-card-content>
+      <br>
+      <br>
+      <i>Si ya usas PapApp Cost:</i>
+      <br>
+      <br>
+      <button mat-raised-button color="primary" class="btn-register" (click)="onLogin()"
+        matTooltip="Empieza atener el control de tus cultivos de PapApp aqui">Inicia Sesión </button>
+      <br>
+      <br>
+      <br>
+      <br>
+      <i>Si es tu primera vez usando PapApp Cost:</i>
+      <br>
+      <br>
+      <button mat-raised-button color="primary" (click)="onRegister()" class="btn-register"
+        matTooltip="¡Que esperas para registrate hoy gratis!">Registrarme </button>
+    </mat-card-content>
 
   </mat-card>
 </main>

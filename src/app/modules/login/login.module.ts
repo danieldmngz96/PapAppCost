@@ -6,7 +6,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { MaterialModule } from 'src/app/material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginRoutingModule } from './login-routing.module';
-
+import { SwiperModule } from 'swiper/angular';
 
 
 @NgModule({
@@ -16,7 +16,8 @@ import { LoginRoutingModule } from './login-routing.module';
     SharedModule,
     LoginRoutingModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SwiperModule
   ],
   exports: [LoginComponent]
 })

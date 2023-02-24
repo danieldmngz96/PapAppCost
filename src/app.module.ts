@@ -16,6 +16,7 @@ import { RegisterRoutingModule } from './app/modules/registro/register-routing.m
 import { ContactoComponent } from './app/modules/contacto/contacto.component';
 import { BubblesComponent } from './app/layout/bubbles/bubbles.component';
 import { LoginModule } from './app/modules/login/login.module';
+import { SwiperModule } from 'swiper/angular';
 
 
 
@@ -38,7 +39,8 @@ import { LoginModule } from './app/modules/login/login.module';
     MaterialModule,
     RouterModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SwiperModule
    ],
   providers: [],
   bootstrap: [ AppComponent ],
