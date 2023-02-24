@@ -32,31 +32,20 @@ export class HomeComponent implements OnInit {
     private http: HttpClient
   ) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+  onSwiperNextClick() {
+    // busca el objeto Swiper
+    const swiper = new Swiper('.swiper');
 
+    // avanza al siguiente slide
+    swiper.slideNext();
   }
-  lookSwiper(){
-    let swiper = new Swiper('.swiper', {
-      // Optional parameters
-      direction: 'horizontal',
-      loop: true,
+  onSwiperBackClick() {
+    // busca el objeto Swiper
+    const swiper = new Swiper('.swiper');
 
-      // If we need pagination
-      pagination: {
-        el: '.swiper-pagination',
-      },
-
-      // Navigation arrows
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-
-      // And if we need scrollbar
-      scrollbar: {
-        el: '.swiper-scrollbar',
-      },
-    });
+    // avanza al siguiente slide
+    swiper.slidePrev();
   }
   //abre modal de registro
   onRegister() {
@@ -73,6 +62,4 @@ export class HomeComponent implements OnInit {
     });
  */
   }
-
-
 }
