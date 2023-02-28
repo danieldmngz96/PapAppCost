@@ -1,0 +1,14 @@
+@import '../../../styles.css';
+
+.section{
+  display: flex;
+justify-content: center;
+}
+
+.btn-save{
+  background-color: var(--green-good);
+  color: white;
+  width: 100%;
+  text-align: center !important;
+}
+

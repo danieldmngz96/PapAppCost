@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 import { RegistroComponent } from '../registro/registro.component';
 import { MatDialog } from '@angular/material/dialog';
 import { LoginService } from 'src/app/service/login.service';
-import swal from'sweetalert2';
+import swal from 'sweetalert2';
 interface User {
   username: string;
   [password: string]: any;
@@ -21,11 +21,12 @@ interface User {
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  username: any = 'danarturodo@hotmail.com';
-  password: any = 'Asas123*';
+  username: any = '';
+  password: any = '';
   //form!: FormGroup;
   loading = false;
   submitted = false;
+  hide = true;
   form: FormGroup = this.formBuilder.group({
     username: ['', [Validators.required, Validators.email]],
     password: [
@@ -54,7 +55,8 @@ export class LoginComponent implements OnInit {
     localStorage.clear();
   }
   ngOnInit(): void {
-
+    this.username = '';
+    this.password = '';
   }
   get f() {
     return this.form.controls;
@@ -73,20 +75,22 @@ export class LoginComponent implements OnInit {
   //este on submit es para manejarlo quemado por localstrorage
   onSubmit() {
     // Verificar si el usuario y la contraseña son correctos
-    if (this.username  && this.password ) {
+    if (
+      this.username === 'danarturodo@hotmail.com' &&
+      this.password === 'Asas123*'
+    ) {
       // Almacenar el nombre  y contraseña de usuario en localStorage
-      localStorage.setItem('', this.username);
-      localStorage.setItem('', this.password);
+      localStorage.setItem('email', this.username);
+      localStorage.setItem('password', this.password);
       // Redirigir al usuario a la página de inicio
       this.router.navigate(['/Welcome']);
     } else {
       // Mostrar un mensaje de error si el usuario y/o la contraseña son incorrectos
       swal.fire({
-        icon: 'error',
+        icon: 'warning',
         title: 'Oops...',
-        text: 'Hubo un error usuario o contraseña con son correctos'
-      })
-
+        text: 'Hubo un error usuario o contraseña con son correctos',
+      });
     }
   }
   get isNameUserInvalid() {

@@ -6,20 +6,21 @@
       </mat-card-header>
       <mat-card-content>
         <mat-form-field>
-          <input matInput type="text" placeholder="Nombre de usuario" name="username" required formGroupName="username"
+          <input matInput type="text" placeholder="Nombre de usuario" name="username"  formGroupName="username"
             [ngClass]="{ 'is-invalid': submitted && form.get('username')?.errors }">
         </mat-form-field>
         <mat-error>
-          <div *ngIf="form.get('username')?.errors && submitted" class="invalid-feedback">
-            <b *ngIf="username.hasError('email') && !username.hasError('required')">Usuario es requerido</b>
-            <b *ngIf="form.get('username')?.hasError('email') && submitted">Usuario debe ser tipo email por ej: PapApp@admin.com</b>
+          <div *ngIf="username?.invalid && (username?.dirty || username?.touched) && submitted" class="invalid-feedback">
+            <b *ngIf="username?.errors?.required">Usuario es requerido</b>
+            <b *ngIf="username.hasError('email') && !username.hasError('required') && submitted">Usuario debe ser tipo email por ej: PapApp@admin.com</b>
           </div>
         </mat-error>
 
         <br>
         <mat-form-field>
-          <input matInput type="password" placeholder="Contraseña" required formGroupName="password"
+          <input matInput type="password" placeholder="Contraseña" required formGroupName="password" [type]="hide ? 'password' : 'text'"
             [ngClass]="{ 'is-invalid': submitted &&  form.get('password')?.errors }">
+            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </mat-form-field>
         <mat-error>
           <div *ngIf="submitted &&  form.get('username')?.errors" class="invalid-feedback">
@@ -29,7 +30,7 @@
           </div>
         </mat-error>
         <br>
-        <button mat-raised-button class="btn-login" (click)="onSubmit()" style="margin: 0 auto !important; "
+        <button mat-raised-button class="btn-login" (click)="goToLogin()" style="margin: 0 auto !important; "
           type="submit">Iniciar sesión</button>
         <br>
         <div [class.active]="isNameUserInvalid">
