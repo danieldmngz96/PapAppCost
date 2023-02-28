@@ -4,7 +4,7 @@ import { LoginComponent } from './login.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { AppRoutingModule } from '../app-routing.module';
 import { MaterialModule } from 'src/app/material/material.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginRoutingModule } from './login-routing.module';
 import { SwiperModule } from 'swiper/angular';
 
@@ -17,7 +17,8 @@ import { SwiperModule } from 'swiper/angular';
     LoginRoutingModule,
     MaterialModule,
     ReactiveFormsModule,
-    SwiperModule
+    SwiperModule,
+    FormsModule
   ],
   exports: [LoginComponent]
 })

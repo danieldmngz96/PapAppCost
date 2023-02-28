@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {
+  FormArray,
   FormBuilder,
   FormControl,
   FormGroup,
@@ -8,6 +9,7 @@ import {
 import { Router } from '@angular/router';
 import { RegistroComponent } from '../registro/registro.component';
 import { MatDialog } from '@angular/material/dialog';
+import { LoginService } from 'src/app/service/login.service';
 
 @Component({
   selector: 'app-login',
@@ -15,9 +17,9 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  [x: string]: any;
   username: any = '';
   password: any = '';
+
   submitted = false;
   form: FormGroup = this.formBuilder.group({
     username: ['', [Validators.required, Validators.email]],
@@ -30,9 +32,12 @@ export class LoginComponent implements OnInit {
       ],
     ],
   });
-  constructor(private formBuilder: FormBuilder,
+  constructor(
+    private formBuilder: FormBuilder,
     private router: Router,
-    public dialog: MatDialog,) {}
+    public dialog: MatDialog,
+    public loginservice: LoginService
+  ) {}
 
   ngOnInit(): void {}
   get f() {
@@ -55,7 +60,7 @@ export class LoginComponent implements OnInit {
       // Almacenar el nombre de usuario en localStorage
       localStorage.setItem('username', this.username);
       // Redirigir al usuario a la página de inicio
-      this.router.navigate(['/Login']);
+      this.router.navigate(['/Welcome']);
     } else {
       // Mostrar un mensaje de error si el usuario y/o la contraseña son incorrectos
       alert('Nombre de usuario y/o contraseña incorrectos.');
@@ -76,10 +81,27 @@ export class LoginComponent implements OnInit {
       }
 
     } */
-    onRegister() {
-      this.router.navigate(['/Register']);
-      const dialogRef = this.dialog.open(RegistroComponent, {
-        width: '550px',
-      });
+  onRegister() {
+    this.router.navigate(['/Register']);
+    const dialogRef = this.dialog.open(RegistroComponent, {
+      width: '550px',
+    });
+  }
+
+  login() {
+    const user = { username: this.username, password: this.password };
+    this.loginservice.login(user).subscribe((data) => {
+      console.log(data);
+
+      if (this.form.touched) {
+        this.submitted = true;
+        return;
+      }
+    });
+  }
+
+    //Obtiene el formControl del login
+    getLoginControl(index: number): FormGroup {
+      return this.form.controls[index] as FormGroup;
     }
 }

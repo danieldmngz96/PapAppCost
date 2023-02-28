@@ -6,7 +6,7 @@
         </mat-card-header>
         <mat-card-content>
           <mat-form-field>
-            <input matInput type="text" placeholder="Nombre de usuario" name="username" required
+            <input matInput type="text"  placeholder="Nombre de usuario" name="username" required
               formGroupName="username" [ngClass]="{ 'is-invalid': submitted && username.invalid }">
           </mat-form-field>
           <mat-error>
@@ -18,7 +18,7 @@
 
           <br>
           <mat-form-field>
-            <input matInput type="password" placeholder="Contraseña" required formGroupName="password"  [ngClass]="{ 'is-invalid': submitted && password.invalid }">
+            <input matInput type="password" placeholder="Contraseña" required   formGroupName="password"  [ngClass]="{ 'is-invalid': submitted && password.invalid }">
           </mat-form-field>
           <mat-error>
             <div *ngIf="submitted && password.invalid" class="invalid-feedback">
@@ -27,13 +27,13 @@
             </div>
           </mat-error>
           <br>
-          <button mat-raised-button class="btn-login"
+          <button mat-raised-button class="btn-login" (click)="login()"
             style="margin: 0 auto !important; " type="submit"
             >Iniciar sesión</button>
           <br>
           <div [class.active]="isNameUserInvalid">
             <mat-error>
-                    <strong *ngIf="form.get('username')?.invalid || form.get('password')?.invalid || isNameUserInvalid == true">Este campo es requerido</strong>
+                    <strong *ngIf="form.get('username')?.invalid && form.get('username')?.touched && form.get('password')?.invalid && form.get('password')?.touched && submitted == true">Este campo es requerido</strong>
             </mat-error>
           </div>
         </mat-card-content>
