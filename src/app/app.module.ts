@@ -9,11 +9,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from './shared/material/material.module';
 import { HomeComponent } from './modules/home/home.component';
+import { RegistroComponent } from './modules/registro/registro.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,

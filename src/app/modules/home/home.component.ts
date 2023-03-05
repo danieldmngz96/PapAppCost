@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 import Swal from 'sweetalert2';
+import { RegistroComponent } from '../registro/registro.component';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +15,9 @@ export class HomeComponent implements OnInit {
   loginForm!: FormGroup;
   hide = true;
   constructor(
-    private service: LoginService
+    private service: LoginService,
+    private readonly router: Router,
+    public dialog: MatDialog,
   ) {}
 
   ngOnInit() {
@@ -49,6 +54,13 @@ export class HomeComponent implements OnInit {
         title: 'Oops...',
         text: 'Correo o contraseña invalida!',
       });
+    });
+  }
+
+  onRegister() {
+    this.router.navigate(['/Register']);
+    const dialogRef = this.dialog.open(RegistroComponent, {
+      width: '50%',
     });
   }
 
