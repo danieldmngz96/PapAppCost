@@ -18,4 +18,15 @@ export class LoginService {
   login(body: any): Observable<any> {
     return this.http.post("https://web-services-papappcost-umb.onrender.com/login/auth", body);
   }
+
+    /**
+  * @author Daniel Dominguez
+  * Servicio para registro de usuarios
+  * @param {body} body json
+  * @returns json
+  */
+  register(body: any): Observable<any> {
+    return this.http.post("https://web-services-papappcost-umb.onrender.com/login/signup/", body);
+  }
+
 }
