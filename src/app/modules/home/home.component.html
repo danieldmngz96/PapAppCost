@@ -1,66 +1,78 @@
-<main class="container">
-  <!--Imagen de papas animaciones etc -->
-  <div style="background-color: var( --green-light);" class="row align-items-center">
-    <div class="col-sm">
-      <!-- Slider main container -->
-      <!-- Slider main container -->
-      <div class="swiper" style="margin: 0 auto;">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-          <!-- Slides -->
-          <div class="swiper-slide">
-            <img src="./../../../assets/potatoes-2795_1920 1.png" alt="Papa cruda" class="img-papa">
-          </div>
-          <div class="swiper-slide"><img src="https://i.ytimg.com/vi/-1PlEobE69g/maxresdefault.jpg" alt="cultivo de papa" width="50%"></div>
-          <div class="swiper-slide"><img src="https://cdn0.ecologiaverde.com/es/posts/7/9/6/tipos_de_patatas_2697_orig.jpg" alt="Papa cruda"  width="50%" ></div>
-        </div>
-        <!-- If we need pagination -->
-        <div class="swiper-pagination"></div>
-
-        <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev" style="color: var(--green-good);" (click)="onSwiperBackClick()"></div>
-        <div class="swiper-button-next"  style="color: var(--green-good);" (click)="onSwiperNextClick()"></div>
-
-        <!-- If we need scrollbar -->
-        <div class="swiper-scrollbar"></div>
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="../../../assets/papappcost.jpg" class="img-fluid" alt="logo PapApp">
       </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <form [formGroup]="loginForm">
+          <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+            <p class="lead fw-normal mb-0 me-3">Iniciar Sesion</p>
+            <button type="button" class="btn btn-success btn-floating mx-1">
+              <i class="fab fa-facebook-f"></i>
+            </button>
 
+            <button type="button" class="btn btn-success btn-floating mx-1">
+              <i class="fab fa-twitter"></i>
+            </button>
+
+            <button type="button" class="btn btn-success btn-floating mx-1">
+              <i class="fab fa-linkedin-in"></i>
+            </button>
+          </div>
+
+          <div class="divider d-flex align-items-center my-4">
+            <p class="text-center fw-bold mx-3 mb-0"></p>
+          </div>
+
+          <!-- Email input -->
+          <mat-form-field class="fill w-100">
+            <mat-label>Correo</mat-label>
+            <input matInput type="text" placeholder="Correo" name="username" formControlName="username">
+            <mat-error *ngIf="loginForm.controls['username'].hasError('required')">* Campo requerido</mat-error>
+            <mat-error *ngIf="loginForm.controls['username'].hasError('email')">* Email no valido</mat-error>
+          </mat-form-field>
+
+          <!-- Password input -->
+          <mat-form-field class="fill w-100">
+            <mat-label>Contraseña</mat-label>
+            <input matInput  [type]="hide ? 'password' : 'text'" placeholder="Contraseña" name="password" formControlName="password">
+            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            <mat-error *ngIf="loginForm.controls['password'].hasError('required')"> * Campo requerido</mat-error>
+            <mat-error *ngIf="loginForm.controls['password'].hasError('minLength')"> * Minimo 8 digitos</mat-error>
+            <mat-error *ngIf="loginForm.controls['password'].hasError('maxLength')"> * Maximo 16 digitos</mat-error>
+          </mat-form-field>
+
+          <div class="d-flex justify-content-between align-items-center">
+            <!-- Checkbox -->
+            <div class="form-check mb-0">
+<!--               <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+              <label class="form-check-label" for="form2Example3">
+                Recuerdame
+              </label> -->
+            </div>
+            <a href="#!" class="text-body">Recuperar contraseña?</a>
+          </div>
+
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="button" class="btn btn-success btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;" (click)="login()" [disabled]="!loginForm.valid">Iniciar</button>
+            <p class="small fw-bold mt-2 pt-1 mb-0">No tienes una cuenta? <a href="#!"
+                class="link-danger">Registrate</a></p>
+          </div>
+        </form>
+      </div>
     </div>
-    <br>
-    <br>
-    <br>
   </div>
-  <!--Opciones de login -->
-  <mat-card style="height: 400px;
-  margin-right: 36px;">
-    <mat-card-header>
-      <img src="../../../assets/papa.png" alt="logo PapApp" width="20%">
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      &nbsp;
-      &nbsp; &nbsp; &nbsp;
-      <mat-card-content
-        style="text-align: center; font-size: 45px; font-weight: bold; color: var(--green-good);">PapApp</mat-card-content>
-    </mat-card-header>
-    <mat-card-content>
-      <br>
-      <br>
-      <i>Si ya usas PapApp Cost:</i>
-      <br>
-      <br>
-      <button mat-raised-button color="primary" class="btn-register" (click)="onLogin()"
-        matTooltip="Empieza atener el control de tus cultivos de PapApp aqui">Inicia Sesión </button>
-      <br>
-      <br>
-      <br>
-      <br>
-      <i>Si es tu primera vez usando PapApp Cost:</i>
-      <br>
-      <br>
-      <button mat-raised-button color="primary" (click)="onRegister()" class="btn-register"
-        matTooltip="¡Que esperas para registrate hoy gratis!">Registrarme </button>
-    </mat-card-content>
+  <div style="position: relative; bottom: -5px;"
+    class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-success">
+    <!-- Copyright -->
+    <div class="text-white mb-3 mb-md-0">
+      Copyright © 2023. All rights reserved.
+    </div>
+    <!-- Copyright -->
 
-  </mat-card>
-</main>
+    <!-- Right -->
+
+    <!-- Right -->
+  </div>
+</section>
