@@ -92,6 +92,7 @@ export class RegistroComponent implements OnInit {
         title: 'Excelente...',
         text: `Su usuario se a creado ${this.myForm.controls['name_user'].value} exitosamente!`,
       });
+      this.dialogRef.close();
     });
   }
 }

@@ -26,6 +26,10 @@ const routes: Routes = [
     path: 'cultivos',
     loadChildren: () => import('./modules/cultivos/cultivos.module').then(m => m.CultivosModule)
   },
+  {
+    path: 'reportes',
+    loadChildren: () => import('./modules/reportes/reportes.module').then(m => m.ReportesModule)
+  },
 ];
 
 @NgModule({
