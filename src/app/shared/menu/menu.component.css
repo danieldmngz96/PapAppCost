@@ -1,0 +1,14 @@
+@import url(../../../styles.scss);
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+@media (max-width: 599px) {
+  .sidenav {
+    width: 100%;
+  }
+}

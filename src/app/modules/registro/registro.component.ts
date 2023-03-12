@@ -2,6 +2,8 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { DepartamentosService } from 'src/app/services/departamentos.service';
+import { LoginService } from 'src/app/services/login.service';
+import Swal from 'sweetalert2';
 
 interface departament {
   value: string;
@@ -35,13 +37,16 @@ export class RegistroComponent implements OnInit {
     province_user: ['', Validators.required],
     city_user: ['', Validators.required],
     birth_date_user: ['', Validators.required],
-    level_studies_user: ['', Validators.required]    
-  })
+    level_studies_user: ['', Validators.required]
+  });
+
+  hide = true;
 
   constructor(public dialogRef: MatDialogRef<RegistroComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private formBuilder: FormBuilder,
-    private service: DepartamentosService
+    private service: DepartamentosService,
+    private registerService: LoginService
   ) { }
 
 
@@ -64,5 +69,25 @@ export class RegistroComponent implements OnInit {
 
     }
     )
+  }
+  register(){
+    let body = {
+      email_user: this.myForm.controls['email_user'].value,
+      password_user: this.myForm.controls['password_user'].value,
+      name_user: this.myForm.controls['name_user'].value,
+      nickname_user: this.myForm.controls['nickname_user'].value,
+      country_user: 'Colombia',
+      province_user: this.myForm.controls['province_user'].value,
+      city_user: this.myForm.controls['city_user'].value,
+      birth_date_user: this.myForm.controls['birth_date_user'].value,
+      level_studies_user: this.myForm.controls['level_studies_user'].value,
+    }
+    this.registerService.register(body).subscribe(data => {
+      Swal.fire({
+        icon: 'success',
+        title: 'Excelente...',
+        text: `Su usuario se a creado ${this.myForm.controls['name_user'].value} exitosamente!`,
+      });
+    });
   }
 }

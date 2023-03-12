@@ -11,6 +11,12 @@
           <input matInput formControlName="name_user" placeholder="Nombre completo">
         </mat-form-field>
       </div>
+      <div class="col-12">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Apodo</mat-label>
+          <input matInput formControlName="nickname_user" placeholder="Apodo">
+        </mat-form-field>
+      </div>
       <div class="col-6">
         <mat-form-field appearance="fill" class="w-100">
           <mat-label>Correo electronico</mat-label>
@@ -26,13 +32,15 @@
       <div class="col-6">
         <mat-form-field appearance="fill" class="w-100">
           <mat-label>Contraeña</mat-label>
-          <input matInput formControlName="password_user" type="password" placeholder="Ingresa Correo Electronico">
+          <input matInput formControlName="password_user" [type]="hide ? 'password' : 'text'" placeholder="Ingresa Correo Electronico">
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </mat-form-field>
       </div>
       <div class="col-6">
         <mat-form-field appearance="fill" class="w-100">
           <mat-label>Confirmar Contraseña</mat-label>
-          <input matInput formControlName="password_user_confirm" type="password" placeholder="Ingresa Correo Electronico">
+          <input matInput formControlName="password_user_confirm" [type]="hide ? 'password' : 'text'" placeholder="Ingresa Correo Electronico">
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </mat-form-field>
       </div>
       <div class="col-12">
@@ -68,7 +76,7 @@
           <mat-hint>DD/MM/YYYY</mat-hint>
           <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>  
+        </mat-form-field>
       </div>
       <div class="col-12">
         <mat-form-field appearance="fill" class="w-100">
@@ -90,7 +98,7 @@
       <button mat-button-raised class="btn btn-sucess" style="height: 48px; width: 100%;" (click)="onNoClick()">Cancelar</button>
     </div>
     <div class="col-6">
-      <button mat-button-raised class="btn btn-sucess" style="height: 48px; width: 100%;" >Registrarme</button>
+      <button mat-button-raised class="btn btn-sucess" (click)="register()" style="height: 48px; width: 100%;" >Registrarme</button>
     </div>
   </div>
 </div>

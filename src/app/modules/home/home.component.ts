@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   hide = true;
   constructor(
     private service: LoginService,
-    private readonly router: Router,
+    private router: Router,
     public dialog: MatDialog,
   ) {}
 
@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
       password_user: this.loginForm.controls['password'].value,
     };
     console.log(body);
-    
+
     this.service.login(body).subscribe((resp: any) => {
       console.log(typeof(resp), resp);
       if(typeof(resp) === 'string'){
@@ -46,7 +46,8 @@ export class HomeComponent implements OnInit {
         localStorage.clear();
       } else if(typeof(resp) === 'object'){
         console.log('login...');
-        localStorage.setItem("user", JSON.stringify(resp));        
+        localStorage.setItem("user", JSON.stringify(resp));
+        this.router.navigate(['/Activity'])
       }
     }, (error: any) => {
       Swal.fire({
@@ -60,7 +61,7 @@ export class HomeComponent implements OnInit {
   onRegister() {
     this.router.navigate(['/Register']);
     const dialogRef = this.dialog.open(RegistroComponent, {
-      width: '50%',
+      width: '60%',
     });
   }
 
