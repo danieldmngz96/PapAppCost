@@ -47,7 +47,7 @@ export class HomeComponent implements OnInit {
       } else if(typeof(resp) === 'object'){
         console.log('login...');
         localStorage.setItem("user", JSON.stringify(resp));
-        this.router.navigate(['/Activity'])
+        this.router.navigate(['/bienvenido'])
       }
     }, (error: any) => {
       Swal.fire({

@@ -1,18 +1,18 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)"  style="background-color: #198754;">
-    <mat-toolbar  style="background-color: #198754;">Menú</mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item routerLink="/">Inicio</a>
-      <a mat-list-item routerLink="/page1">Página 1</a>
-      <a mat-list-item routerLink="/page2">Página 2</a>
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)"  style="background-color: #198754;color: white;">
+    <mat-toolbar  style="background-color: #198754; color: white !important;">Menú</mat-toolbar>
+    <mat-nav-list  style="color: white !important;">
+      <a mat-list-item [ngStyle]="{'color': 'white'}" routerLink="/bienvenido">Inicio</a>
+      <a mat-list-item [ngStyle]="{'color': 'white'}" routerLink="/Activity">Registra un cultivo</a>
+      <a mat-list-item [ngStyle]="{'color': 'white'}" routerLink="/cultivos">Tus cultivos</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar  style="background-color: #198754;">
+    <mat-toolbar  style="background-color: #198754;height: 84px;color: white;">
       <button mat-icon-button (click)="drawer.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
-      <span >Título de la página</span>
+      <span >PapAppCost</span>
     </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>

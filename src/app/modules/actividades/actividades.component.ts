@@ -15,10 +15,14 @@ export class ActividadesComponent implements OnInit {
     {value: 'terreno-1', viewValue: 'hectárea'},
     {value: 'terreno-2', viewValue: 'Fanegada'},
   ];
+  name: any = '';
   constructor(private router: Router,) { }
 
   ngOnInit() {
+    const data = localStorage.getItem('user');
+    this.name = JSON.parse(data || '');
   }
+
   nextPage(){
     this.router.navigate(['/Activity']);
   }

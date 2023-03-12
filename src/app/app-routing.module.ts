@@ -17,7 +17,15 @@ const routes: Routes = [
   {
     path: 'Activity',
     loadChildren: () => import('./modules/actividades/actividades.module').then(m => m.ActividadesModule)
-  }
+  },
+  {
+    path: 'bienvenido',
+    loadChildren: () => import('./modules/landing/landing.module').then(m => m.LandingModule)
+  },
+  {
+    path: 'cultivos',
+    loadChildren: () => import('./modules/cultivos/cultivos.module').then(m => m.CultivosModule)
+  },
 ];
 
 @NgModule({
