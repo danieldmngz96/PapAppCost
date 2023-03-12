@@ -1,6 +1,6 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)"  style="background-color: var( --green-good);">
-    <mat-toolbar  style="background-color: var( --green-good);">Menú</mat-toolbar>
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)"  style="background-color: #198754;">
+    <mat-toolbar  style="background-color: #198754;">Menú</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item routerLink="/">Inicio</a>
       <a mat-list-item routerLink="/page1">Página 1</a>
@@ -8,7 +8,7 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar  style="background-color: var( --green-good);">
+    <mat-toolbar  style="background-color: #198754;">
       <button mat-icon-button (click)="drawer.toggle()">
         <mat-icon>menu</mat-icon>
       </button>

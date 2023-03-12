@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import * as moment from 'moment';
 import { DepartamentosService } from 'src/app/services/departamentos.service';
 import { LoginService } from 'src/app/services/login.service';
 import Swal from 'sweetalert2';
@@ -46,7 +47,7 @@ export class RegistroComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any,
     private formBuilder: FormBuilder,
     private service: DepartamentosService,
-    private registerService: LoginService
+    private registerService: LoginService,
   ) { }
 
 
@@ -71,6 +72,7 @@ export class RegistroComponent implements OnInit {
     )
   }
   register(){
+    const birthDate =moment(this.myForm.controls['birth_date_user'].value).format('YYYY-MM-DD');
     let body = {
       email_user: this.myForm.controls['email_user'].value,
       password_user: this.myForm.controls['password_user'].value,
@@ -79,8 +81,10 @@ export class RegistroComponent implements OnInit {
       country_user: 'Colombia',
       province_user: this.myForm.controls['province_user'].value,
       city_user: this.myForm.controls['city_user'].value,
-      birth_date_user: this.myForm.controls['birth_date_user'].value,
+      birth_date_user: birthDate,
       level_studies_user: this.myForm.controls['level_studies_user'].value,
+      record_date_table: "",
+      last_update_date: "",
     }
     this.registerService.register(body).subscribe(data => {
       Swal.fire({
