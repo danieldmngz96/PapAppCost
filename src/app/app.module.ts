@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { MaterialModule } from './shared/material/material.module';
 import { HomeComponent } from './modules/home/home.component';
 import { RegistroComponent } from './modules/registro/registro.component';
+import { FooterModule } from './shared/footer/footer.module';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { RegistroComponent } from './modules/registro/registro.component';
     RouterModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FooterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

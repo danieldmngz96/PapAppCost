@@ -5,13 +5,15 @@ import { ActividadesRoutingModule } from './actividades-rounting.module';
 import { MaterialModule } from 'src/app/shared/material/material.module';
 import { MenuModule } from 'src/app/shared/menu/menu.module';
 import { MenuComponent } from 'src/app/shared/menu/menu.component';
+import { FooterModule } from 'src/app/shared/footer/footer.module';
 
 @NgModule({
   imports: [
     CommonModule,
     ActividadesRoutingModule,
     MaterialModule,
-    MenuModule
+    MenuModule,
+    FooterModule
   ],
   declarations: [ActividadesComponent]
 })
