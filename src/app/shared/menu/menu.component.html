@@ -1,11 +1,14 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)"  style="background-color: #198754;color: white;">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)"  style="background-color: #198754; color: white;">
     <mat-toolbar  style="background-color: #198754; color: white !important;">Menú</mat-toolbar>
-    <mat-nav-list  style="color: white !important;">
-      <a mat-list-item [ngStyle]="{'color': 'white'}" routerLink="/bienvenido">Inicio</a>
-      <a mat-list-item [ngStyle]="{'color': 'white'}" routerLink="/Activity">Registra un cultivo</a>
-      <a mat-list-item [ngStyle]="{'color': 'white'}" routerLink="/cultivos">Tus cultivos</a>
-      <a mat-list-item [ngStyle]="{'color': 'white'}" routerLink="/reportes">Tus reportes</a>
+    <mat-nav-list>
+      <div style="padding-bottom: 75%;">
+        <a mat-list-item [ngStyle]="{'color': 'white'}" routerLink="/bienvenido">Inicio</a>
+        <a mat-list-item [ngStyle]="{'color': 'white'}" routerLink="/Activity">Registra un cultivo</a>
+        <a mat-list-item [ngStyle]="{'color': 'white'}" routerLink="/cultivos">Tus cultivos</a>
+        <a mat-list-item [ngStyle]="{'color': 'white'}" routerLink="/reportes">Tus reportes</a>
+      </div>
+      <button mat-raised-button style="background-color: var(--green-dark); display: flex; margin: 0 auto;" [ngStyle]="{'color': 'red'}" routerLink="/">Salir</button>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

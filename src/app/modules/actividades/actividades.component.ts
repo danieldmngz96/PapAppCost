@@ -10,6 +10,7 @@ interface Food {
   styleUrls: ['./actividades.component.scss']
 })
 export class ActividadesComponent implements OnInit {
+  fecha = new Date();
   foods: Food[] = [
     {value: 'terreno-0', viewValue: 'm2'},
     {value: 'terreno-1', viewValue: 'hectárea'},
@@ -21,6 +22,7 @@ export class ActividadesComponent implements OnInit {
   ngOnInit() {
     const data = localStorage.getItem('user');
     this.name = JSON.parse(data || '');
+    this.fecha = new Date();
   }
 
   nextPage(){

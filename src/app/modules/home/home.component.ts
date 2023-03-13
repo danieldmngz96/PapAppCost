@@ -12,6 +12,7 @@ import { RegistroComponent } from '../registro/registro.component';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  fecha = new Date();
   loginForm!: FormGroup;
   hide = true;
   constructor(
@@ -26,6 +27,7 @@ export class HomeComponent implements OnInit {
       password: new FormControl('',[Validators.required],
       ),
     });
+    this.fecha = new Date();
   }
 
   login() {

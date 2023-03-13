@@ -7,12 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
   name: any;
-
+  fecha = new Date();
   constructor() { }
 
   ngOnInit() {
     const data = localStorage.getItem('user');
     this.name = JSON.parse(data || '');
+    this.fecha = new Date();
   }
 
 }
