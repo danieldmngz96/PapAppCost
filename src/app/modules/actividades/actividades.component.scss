@@ -1,5 +1,4 @@
 
-
 .divider:after,
 .divider:before {
     content: "";
@@ -31,4 +30,9 @@
 ::ng-deep .mat-form-field-ripple {
     /*change color of underline when focused*/
     background-color: green !important;
+}
+
+
+.mat-mdc-form-field{
+ display: block;
 }
