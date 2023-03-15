@@ -39,8 +39,8 @@
             <input matInput  [type]="hide ? 'password' : 'text'" placeholder="Contraseña" name="password" formControlName="password">
             <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             <mat-error *ngIf="loginForm.controls['password'].hasError('required')"> * Campo requerido</mat-error>
-<!--             <mat-error *ngIf="loginForm.controls['password'].hasError('minLength')"> * Minimo 8 digitos</mat-error>
-            <mat-error *ngIf="loginForm.controls['password'].hasError('maxLength')"> * Maximo 16 digitos</mat-error> -->
+            <mat-error *ngIf="loginForm.controls['password'].hasError('minLength')"> * Minimo 8 digitos</mat-error>
+            <mat-error *ngIf="loginForm.controls['password'].hasError('maxLength')"> * Maximo 16 digitos</mat-error>
           </mat-form-field>
 
           <div class="d-flex justify-content-between align-items-center">

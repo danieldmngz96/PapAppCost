@@ -51,7 +51,9 @@
           <mat-label>Departamento</mat-label>
           <mat-select formControlName="province_user" (selectionChange)="lookForDepartamentos($event)" [(value)]="selectedMunicipio">
             <mat-option *ngFor="let item of departamentos" [value]="item">
-              {{item}}
+              <span style="color: black;">
+                {{item}}
+              </span>
             </mat-option>
           </mat-select>
         </mat-form-field>
@@ -61,7 +63,9 @@
           <mat-label>Municipio</mat-label>
           <mat-select formControlName="city_user" >
             <mat-option *ngFor="let muni of municipios" [value]="muni.municipio">
-              {{muni.municipio}}
+              <span style="color: black;">
+                {{muni.municipio}}
+              </span>
             </mat-option>
           </mat-select>
         </mat-form-field>

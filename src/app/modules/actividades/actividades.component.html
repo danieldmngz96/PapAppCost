@@ -56,18 +56,18 @@
                               </mat-radio-group>
                             </div>
                             <div class="col col-12">
-                              <button style="height: 48px;" class="mt-5 w-100 btn btn-success" (click)="nextPage()">Siguiente</button>
+                              <button matStepperNext style="height: 48px;" class="mt-5 w-100 btn btn-success" (click)="nextPage() ">Siguiente</button>
                             </div>
                           </div>
                       </mat-card-content>
                     </mat-card>
                   </mat-form-field>
                   <div>
-                    <button mat-button matStepperNext>Next</button>
+                   <button mat-button matStepperNext>Next</button>
                   </div>
                 </form>
               </mat-step>
-              <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
+              <mat-step [stepControl]="secondFormGroup" label="Selecciona las actividades de producción">
                 <form >
                   <mat-form-field appearance="fill">
                     <mat-label>Address</mat-label>
