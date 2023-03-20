@@ -21,9 +21,7 @@ export class ActividadesComponent implements OnInit {
   isLinear = false;
   fecha = new Date();
   foods: Food[] = [
-    {value: 'terreno-0', viewValue: 'm2'},
-    {value: 'terreno-1', viewValue: 'hectárea'},
-    {value: 'terreno-2', viewValue: 'Fanegada'},
+    {value: 'terreno-1', viewValue: 'hectárea'}
   ];
   name: any = '';
   constructor(private router: Router,

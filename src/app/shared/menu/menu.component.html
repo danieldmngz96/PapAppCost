@@ -1,23 +1,60 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)"  style="background-color: #198754; color: white;">
-    <mat-toolbar  style="background-color: #198754; color: white !important;">Menú</mat-toolbar>
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)"
+    style="background-color: #198754; color: white;">
+    <mat-toolbar style="background-color: #198754; color: white !important;">Menú</mat-toolbar>
     <mat-nav-list>
       <div style="padding-bottom: 75%;">
-        <a mat-list-item [ngStyle]="{'color': 'white'}" routerLink="/bienvenido">Inicio</a>
-        <a mat-list-item [ngStyle]="{'color': 'white'}" routerLink="/Activity">Registra un cultivo</a>
-        <a mat-list-item [ngStyle]="{'color': 'white'}" routerLink="/cultivos">Tus cultivos</a>
-        <a mat-list-item [ngStyle]="{'color': 'white'}" routerLink="/reportes">Tus reportes</a>
-        <a mat-list-item [ngStyle]="{'color': 'white'}" routerLink="/movimientos">Tus movimientos</a>
+        <a mat-list-item [ngStyle]="{'color': 'white'}" routerLink="/Activity">Nuevo cultivo</a>
+        <button mat-button [matMenuTriggerFor]="menu" color="white">Registros</button>
+        <mat-menu #menu="matMenu" class="customize">
+          <button mat-menu-item>
+            <span style="color: black;">Costos</span>
+          </button>
+          <button mat-menu-item>
+            <span style="color: black;">
+              Terminar Produccion
+            </span>
+          </button>
+          <button mat-menu-item>
+            <span style="color: black;">
+              Consultar
+            </span>
+          </button>
+        </mat-menu>
+        <br>
+        <button mat-button [matMenuTriggerFor]="menu2" color="white">Calculos</button>
+        <mat-menu #menu2="matMenu" class="customize">
+            <button mat-menu-item>
+              <span style="color: black;">Precio Venta</span>
+            </button>
+            <button mat-menu-item>
+              <span style="color: black;">
+                Consultar
+              </span>
+            </button>
+          </mat-menu>
+          <br>
+          <button mat-menu-item>
+            <span >
+              Reporte de costos
+            </span>
+          </button>
+
+
+
+
       </div>
-      <button mat-raised-button style="background-color: var(--green-dark); display: flex; margin: 0 auto;" [ngStyle]="{'color': 'red'}" routerLink="/">Salir</button>
+      <button mat-raised-button style="background-color: var(--green-dark); display: flex; margin: 0 auto;"
+        [ngStyle]="{'color': 'red'}" routerLink="/">Salir</button>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar  style="background-color: #198754;height: 84px;color: white;">
+    <mat-toolbar style="background-color: #198754;height: 84px;color: white;">
       <button mat-icon-button (click)="drawer.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
-      <span >PapAppCost</span>
+      <span>PapAppCost</span>
     </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
