@@ -13,7 +13,7 @@
               <mat-step [stepControl]="firstFormGroup">
                 <form>
                   <ng-template matStepLabel>Informacion del cultivo</ng-template>
-                  <mat-form-field appearance="fill">
+                  <mat-form-field appearance="fill" >
                     <mat-card>
                       <mat-card-title class="row p-4 d-flex justify-content-center align-items-center"
                         style="text-align: center; margin-bottom: 48px; ">
@@ -60,14 +60,14 @@
                           </div>
                           <div class="col col-12">
                             <button matStepperNext style="height: 48px;" class="mt-5 w-100 btn btn-success"
-                              (click)="nextPage() ">Siguiente</button>
+                             >Siguiente</button>
                           </div>
                         </div>
                       </mat-card-content>
                     </mat-card>
                   </mat-form-field>
                   <div>
-                    <button mat-button matStepperNext>Next</button>
+                    <button mat-button (click)="stepper.next()">Next</button>
                   </div>
                 </form>
               </mat-step>

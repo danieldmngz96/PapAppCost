@@ -33,7 +33,7 @@ export class ActividadesComponent implements OnInit {
     this.fecha = new Date();
   }
 
-  nextPage(){
+ /*  nextPage(){
     this.router.navigate(['/Activity']);
-  }
+  } */
 }
