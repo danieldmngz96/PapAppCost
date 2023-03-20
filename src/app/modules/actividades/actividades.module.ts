@@ -6,6 +6,8 @@ import { MaterialModule } from 'src/app/shared/material/material.module';
 import { MenuModule } from 'src/app/shared/menu/menu.module';
 import { MenuComponent } from 'src/app/shared/menu/menu.component';
 import { FooterModule } from 'src/app/shared/footer/footer.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatStepperModule } from '@angular/material/stepper';
 
 @NgModule({
   imports: [
@@ -13,7 +15,10 @@ import { FooterModule } from 'src/app/shared/footer/footer.module';
     ActividadesRoutingModule,
     MaterialModule,
     MenuModule,
-    FooterModule
+    FooterModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatStepperModule
   ],
   declarations: [ActividadesComponent]
 })

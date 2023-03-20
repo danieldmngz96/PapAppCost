@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import {FormBuilder, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 interface Food {
   value: string;
   viewValue: string;
@@ -12,18 +12,25 @@ interface Food {
   styleUrls: ['./actividades.component.scss']
 })
 export class ActividadesComponent implements OnInit {
-  firstFormGroup = this._formBuilder.group({
-    firstCtrl: ['', Validators.required],
-  });
-  secondFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
-  });
+
   isLinear = false;
   fecha = new Date();
   foods: Food[] = [
     {value: 'terreno-1', viewValue: 'hectárea'}
   ];
   name: any = '';
+
+  //FormGroup de los steps
+  stepOneForm = new FormGroup({
+    firstName: new FormControl('', Validators.required),
+    lastName: new FormControl('', Validators.required),
+  });
+
+  stepTwoForm = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    phone: new FormControl('', [Validators.required, Validators.pattern(/^\d{10}$/)]),
+  });
+
   constructor(private router: Router,
     private _formBuilder: FormBuilder) { }
 
@@ -33,7 +40,8 @@ export class ActividadesComponent implements OnInit {
     this.fecha = new Date();
   }
 
- /*  nextPage(){
-    this.router.navigate(['/Activity']);
-  } */
+  saveForm(){
+
+  }
+
 }
