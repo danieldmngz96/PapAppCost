@@ -1,21 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReportesComponent } from './reportes.component';
+import { MovimientosComponent } from './movimientos.component';
 import { MaterialModule } from 'src/app/shared/material/material.module';
+import { MenuComponent } from 'src/app/shared/menu/menu.component';
+import { FooterComponent } from 'src/app/shared/footer/footer.component';
 import { MenuModule } from 'src/app/shared/menu/menu.module';
-import { ReportesRoutingModule } from './reportes-rounting.module';
 import { FooterModule } from 'src/app/shared/footer/footer.module';
-import { NgChartsModule } from 'ng2-charts';
+import { MovimientosRoutingModule } from './movimientos-routing.module';
 
 @NgModule({
   imports: [
     CommonModule,
     MaterialModule,
-    ReportesRoutingModule,
     MenuModule,
     FooterModule,
-    NgChartsModule
+    MovimientosRoutingModule
   ],
-  declarations: [ReportesComponent]
+  declarations: [MovimientosComponent]
 })
-export class ReportesModule { }
+export class MovimientosModule { }
