@@ -19,7 +19,7 @@ export class ActividadesComponent implements OnInit {
     {value: 'terreno-1', viewValue: 'hectárea'}
   ];
   name: any = '';
-
+  stepOneFormOne = true;
   //FormGroup de los steps
   stepOneForm = new FormGroup({
     nameCultivo: new FormControl('', Validators.required),
@@ -34,6 +34,11 @@ export class ActividadesComponent implements OnInit {
     laboresCultivo: new FormControl('', Validators.required),
     cosecha: new FormControl('', Validators.required),
     empaqueCultivo: new FormControl('', Validators.required),
+    machineOne : new FormControl('', Validators.required),
+    machineTwo : new FormControl('', Validators.required),
+    machineThere : new FormControl('', Validators.required),
+    machineFour : new FormControl('', Validators.required),
+    machineFive : new FormControl('', Validators.required),
   });
 
   constructor(private router: Router,

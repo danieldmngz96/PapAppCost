@@ -58,14 +58,38 @@
                     <div class="col col-12">
                       <mat-radio-group formControlName="checkMachine">
                         <mat-label>¿Tiene maquinaria?</mat-label>
-                        <mat-radio-button class="m-3" value="after">SI</mat-radio-button>
-                        <mat-radio-button class="m-3" value="before">NO</mat-radio-button>
+                        <mat-radio-button class="m-3" value="1">SI</mat-radio-button>
+                        <mat-radio-button class="m-3" value="0">NO</mat-radio-button>
                       </mat-radio-group>
                     </div>
-                    <div class="col col-12">
-                      <button matStepperNext style="height: 48px;" class="mt-5 w-100 btn btn-success">Siguiente</button>
+                    <div class="col col-12" *ngIf="stepOneForm.controls.checkMachine.value == '1'">
+
+                      <mat-form-field appearance="fill" class="w-100">
+                        <mat-label>Nombre de maquinaria</mat-label>
+                        <input matInput placeholder="Ej 3 tractores" formControlName="machineOne">
+                      </mat-form-field>
+                      <mat-form-field appearance="fill" class="w-100">
+                        <mat-label>Nombre de maquinaria</mat-label>
+                        <input matInput placeholder="Ej 3 tractores" formControlName="machineTwo">
+                      </mat-form-field>
+                      <mat-form-field appearance="fill" class="w-100">
+                        <mat-label>Nombre de maquinaria</mat-label>
+                        <input matInput placeholder="Ej 3 tractores" formControlName="machineThere">
+                      </mat-form-field>
+                      <mat-form-field appearance="fill" class="w-100">
+                        <mat-label>Nombre de maquinaria</mat-label>
+                        <input matInput placeholder="Ej 3 tractores" formControlName="machineFour">
+                      </mat-form-field>
+                      <mat-form-field appearance="fill" class="w-100">
+                        <mat-label>Nombre de maquinaria</mat-label>
+                        <input matInput placeholder="Ej 3 tractores" formControlName="machineFive">
+                      </mat-form-field>
                     </div>
                   </div>
+                  <div class="col col-12">
+                    <button matStepperNext style="height: 48px;" class="mt-5 w-100 btn btn-success">Siguiente</button>
+                  </div>
+
 
                 </form>
               </mat-step>
@@ -115,7 +139,8 @@
                   </mat-form-field>
 
                   <div class="col col-12">
-                    <button style="height: 48px;" class="mt-5 w-100 btn btn-success" (click)="saveForm()" >Guardar</button>
+                    <button style="height: 48px;" class="mt-5 w-100 btn btn-success"
+                      (click)="saveForm()">Guardar</button>
                   </div>
                 </form>
               </mat-step>
