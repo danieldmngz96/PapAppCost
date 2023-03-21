@@ -22,13 +22,18 @@ export class ActividadesComponent implements OnInit {
 
   //FormGroup de los steps
   stepOneForm = new FormGroup({
-    firstName: new FormControl('', Validators.required),
-    lastName: new FormControl('', Validators.required),
+    nameCultivo: new FormControl('', Validators.required),
+    dateCultivo: new FormControl('', Validators.required),
+    mumberHectaria : new FormControl('', Validators.required),
+    checkMachine: new FormControl('', Validators.required),
   });
 
   stepTwoForm = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
-    phone: new FormControl('', [Validators.required, Validators.pattern(/^\d{10}$/)]),
+    preparacionSuelo: new FormControl('', Validators.required),
+    siembraCultivo: new FormControl('', Validators.required),
+    laboresCultivo: new FormControl('', Validators.required),
+    cosecha: new FormControl('', Validators.required),
+    empaqueCultivo: new FormControl('', Validators.required),
   });
 
   constructor(private router: Router,
