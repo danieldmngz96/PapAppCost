@@ -26,6 +26,11 @@ export class ActividadesComponent implements OnInit {
     dateCultivo: new FormControl('', Validators.required),
     mumberHectaria : new FormControl('', Validators.required),
     checkMachine: new FormControl('', Validators.required),
+    machineOne : new FormControl('', Validators.required),
+    machineTwo : new FormControl('', Validators.required),
+    machineThere : new FormControl('', Validators.required),
+    machineFour : new FormControl('', Validators.required),
+    machineFive : new FormControl('', Validators.required),
   });
 
   stepTwoForm = new FormGroup({
@@ -34,11 +39,7 @@ export class ActividadesComponent implements OnInit {
     laboresCultivo: new FormControl('', Validators.required),
     cosecha: new FormControl('', Validators.required),
     empaqueCultivo: new FormControl('', Validators.required),
-    machineOne : new FormControl('', Validators.required),
-    machineTwo : new FormControl('', Validators.required),
-    machineThere : new FormControl('', Validators.required),
-    machineFour : new FormControl('', Validators.required),
-    machineFive : new FormControl('', Validators.required),
+
   });
 
   constructor(private router: Router,
