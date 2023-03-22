@@ -6,7 +6,15 @@ import { catchError, map, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class ActividadesService {
-  actividades = "https://web-services-papappcost-umb.onrender.com/crop_settings/crop_activity/id_main_process/1"
+  actividad1 = "https://web-services-papappcost-umb.onrender.com/crop_settings/crop_activity/id_main_process/1";
+
+  actividad2 = "https://web-services-papappcost-umb.onrender.com/crop_settings/crop_activity/id_main_process/2";
+
+  actividad3 = "https://web-services-papappcost-umb.onrender.com/crop_settings/crop_activity/id_main_process/3";
+
+  actividad4 = "https://web-services-papappcost-umb.onrender.com/crop_settings/crop_activity/id_main_process/4";
+
+  actividad5 = "https://web-services-papappcost-umb.onrender.com/crop_settings/crop_activity/id_main_process/5";
 constructor(private http: HttpClient) { }
 
 handleError(error: HttpErrorResponse): any {
@@ -19,10 +27,38 @@ handleError(error: HttpErrorResponse): any {
      * @param {json} filters json
      * @returns json
      */
- getActividades() {
-  return this.http.get<any[]>(`${this.actividades}`).pipe(
+ getActividades1() {
+  return this.http.get<any[]>(`${this.actividad1}`).pipe(
     catchError(this.handleError),
-    map((actividades:any) => actividades.map((m:any) => m.description_activity)),map(description_activity => [...new Set(this.actividades)]),
+    map((actividades:any) => actividades.map((m:any) => m.description_activity)),
+    );
+}
+
+getActividades2() {
+  return this.http.get<any[]>(`${this.actividad2}`).pipe(
+    catchError(this.handleError),
+    map((actividades:any) => actividades.map((m:any) => m.description_activity)),
+    );
+}
+
+getActividades3() {
+  return this.http.get<any[]>(`${this.actividad3}`).pipe(
+    catchError(this.handleError),
+    map((actividades:any) => actividades.map((m:any) => m.description_activity)),
+    );
+}
+
+getActividades4() {
+  return this.http.get<any[]>(`${this.actividad4}`).pipe(
+    catchError(this.handleError),
+    map((actividades:any) => actividades.map((m:any) => m.description_activity)),
+    );
+}
+
+getActividades5() {
+  return this.http.get<any[]>(`${this.actividad5}`).pipe(
+    catchError(this.handleError),
+    map((actividades:any) => actividades.map((m:any) => m.description_activity)),
     );
 }
 }

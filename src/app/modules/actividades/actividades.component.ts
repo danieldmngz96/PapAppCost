@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { DatePipe } from '@angular/common';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
+import { ActividadesService } from 'src/app/services/actividades.service';
 interface Food {
   value: string;
   viewValue: string;
@@ -14,7 +15,7 @@ interface Food {
   styleUrls: ['./actividades.component.scss']
 })
 export class ActividadesComponent implements OnInit {
-
+  description_activity: any = []
   isLinear = false;
   fecha = new Date();
   foods: Food[] = [
@@ -47,12 +48,38 @@ export class ActividadesComponent implements OnInit {
 
   constructor(private router: Router,
     private _formBuilder: FormBuilder,
-    private datePipe: DatePipe) { }
+    private datePipe: DatePipe,
+    private activity: ActividadesService,) { }
 
   ngOnInit() {
     const data = localStorage.getItem('user');
     this.name = JSON.parse(data || '');
     this.fecha = new Date();
+
+    this.activity.getActividades1().subscribe(data => {
+      this.description_activity = data
+      console.log(this.description_activity);
+    });
+
+    this.activity.getActividades2().subscribe(data => {
+      this.description_activity = data
+      console.log(this.description_activity);
+    });
+
+    this.activity.getActividades3().subscribe(data => {
+      this.description_activity = data
+      console.log(this.description_activity);
+    });
+
+    this.activity.getActividades4().subscribe(data => {
+      this.description_activity = data
+      console.log(this.description_activity);
+    });
+
+    this.activity.getActividades5().subscribe(data => {
+      this.description_activity = data
+      console.log(this.description_activity);
+    });
   }
 
   saveForm(){
