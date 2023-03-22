@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import { DatePipe } from '@angular/common';
+import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 interface Food {
   value: string;
   viewValue: string;
@@ -20,11 +22,12 @@ export class ActividadesComponent implements OnInit {
   ];
   name: any = '';
   stepOneFormOne = true;
+  onlyNumbers = /^[0-9]+$/;
   //FormGroup de los steps
   stepOneForm = new FormGroup({
     nameCultivo: new FormControl('', Validators.required),
     dateCultivo: new FormControl('', Validators.required),
-    mumberHectaria : new FormControl('', Validators.required),
+    mumberHectaria : new FormControl('', [Validators.required, Validators.pattern(this.onlyNumbers)]),
     checkMachine: new FormControl('', Validators.required),
     machineOne : new FormControl('', Validators.required),
     machineTwo : new FormControl('', Validators.required),
@@ -43,7 +46,8 @@ export class ActividadesComponent implements OnInit {
   });
 
   constructor(private router: Router,
-    private _formBuilder: FormBuilder) { }
+    private _formBuilder: FormBuilder,
+    private datePipe: DatePipe) { }
 
   ngOnInit() {
     const data = localStorage.getItem('user');
@@ -53,6 +57,11 @@ export class ActividadesComponent implements OnInit {
 
   saveForm(){
 
+  }
+
+  dateCultivo(event: MatDatepickerInputEvent<Date>) {
+    const formattedDate = this.datePipe.transform(event.value, 'MM/yyyy');
+    this.stepOneForm.get('dateCultivo')?.setValue(formattedDate);
   }
 
 }

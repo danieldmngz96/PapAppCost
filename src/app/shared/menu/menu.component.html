@@ -6,6 +6,28 @@
     <mat-nav-list>
       <div style="padding-bottom: 75%;">
         <a mat-list-item [ngStyle]="{'color': 'white'}" routerLink="/Activity">Nuevo cultivo</a>
+
+        <mat-accordion>
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Registros
+              </mat-panel-title>
+              <mat-panel-description>
+                 tus registros
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+          <ul>
+            <li>Costos</li>
+            <li>Terminar Produccion</li>
+            <li>Consultar</li>
+          </ul>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true"
+                               (closed)="panelOpenState = false">
+          </mat-expansion-panel>
+        </mat-accordion>
+
         <button mat-button [matMenuTriggerFor]="menu" color="white">Registros</button>
         <mat-menu #menu="matMenu" class="customize">
           <button mat-menu-item>

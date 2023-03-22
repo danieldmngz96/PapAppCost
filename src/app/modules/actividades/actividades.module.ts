@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { ActividadesComponent } from './actividades.component';
 import { ActividadesRoutingModule } from './actividades-rounting.module';
 import { MaterialModule } from 'src/app/shared/material/material.module';
@@ -20,6 +20,7 @@ import { MatStepperModule } from '@angular/material/stepper';
     ReactiveFormsModule,
     MatStepperModule
   ],
-  declarations: [ActividadesComponent]
+  declarations: [ActividadesComponent],
+  providers: [DatePipe], // agrega DatePipe al arreglo providers
 })
 export class ActividadesModule { }

@@ -8,6 +8,7 @@ import { map, Observable, shareReplay } from 'rxjs';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
+  panelOpenState = false;
   isHandset$: Observable<BreakpointState | boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),
