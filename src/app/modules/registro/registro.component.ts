@@ -19,12 +19,12 @@ export class RegistroComponent implements OnInit {
   departamentos: any = []
   selectedMunicipio = null
   niveles: any[] = [
-    {id:"No tiene", name:"No tiene"},
-    {id:"Primaria", name:"Primaria"},
-    {id:"Bachiller", name:"Bachiller"},
-    {id:"Tecnico", name:"Tecnico"},
-    {id:"Tecnologo", name:"Tecnologo"},
-    {id:"Universitario", name:"Universitario"}
+    { id: "No tiene", name: "No tiene" },
+    { id: "Primaria", name: "Primaria" },
+    { id: "Bachiller", name: "Bachiller" },
+    { id: "Tecnico", name: "Tecnico" },
+    { id: "Tecnologo", name: "Tecnologo" },
+    { id: "Universitario", name: "Universitario" }
   ];
 
   myForm: FormGroup = this.formBuilder.group({
@@ -63,7 +63,7 @@ export class RegistroComponent implements OnInit {
 
   lookForDepartamentos(event: any) {
     console.log(event);
- /*    console.log(this.departamentos); */
+    /*    console.log(this.departamentos); */
     this.service.getMunicipiosporDepartamento(event.value).subscribe(data => {
       this.municipios = data;
       console.log(data);
@@ -71,8 +71,8 @@ export class RegistroComponent implements OnInit {
     }
     )
   }
-  register(){
-    const birthDate =moment(this.myForm.controls['birth_date_user'].value).format('YYYY-MM-DD');
+  register() {
+    const birthDate = moment(this.myForm.controls['birth_date_user'].value).format('YYYY-MM-DD');
     let body = {
       email_user: this.myForm.controls['email_user'].value,
       password_user: this.myForm.controls['password_user'].value,

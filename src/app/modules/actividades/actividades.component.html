@@ -100,41 +100,44 @@
 
                   <mat-form-field appearance="fill">
                     <mat-label>Preparacón de suelo</mat-label>
-                    <mat-select formControlName="preparacionSuelo">
-                      <mat-option value="one">First option</mat-option>
-                      <mat-option value="two">Second option</mat-option>
+                    <mat-select formControlName="preparacionSuelo"
+                    (selectionChange)="lookForActivity($event)">
+                      <mat-option [value]="item" *ngFor="let item of name_activity">
+                        <span style="color: black;">{{item}}</span>
+                      </mat-option>
+
                     </mat-select>
                   </mat-form-field>
                   <br>
                   <mat-form-field appearance="fill">
                     <mat-label>Siembra</mat-label>
-                    <mat-select formControlName="siembraCultivo">
-                      <mat-option value="one">First option</mat-option>
-                      <mat-option value="two">Second option</mat-option>
+                    <mat-select formControlName="siembraCultivo"  (selectionChange)="lookForActivity2($event)">
+                      <mat-option [value]="item" *ngFor="let item of name_activity">
+                         <span style="color: black;">{{item}}</span></mat-option>
                     </mat-select>
                   </mat-form-field>
                   <br>
                   <mat-form-field appearance="fill">
                     <mat-label>Labores de cultivo</mat-label>
-                    <mat-select formControlName="laboresCultivo">
-                      <mat-option value="one">First option</mat-option>
-                      <mat-option value="two">Second option</mat-option>
+                    <mat-select formControlName="laboresCultivo"
+                    (selectionChange)="lookForActivity2($event)">
+                      <mat-option [value]="item" *ngFor="let item of name_activity">  <span style="color: black;">{{item}}</span></mat-option>
                     </mat-select>
                   </mat-form-field>
                   <br>
                   <mat-form-field appearance="fill">
                     <mat-label>Cosecha</mat-label>
-                    <mat-select formControlName="cosecha">
-                      <mat-option value="one">First option</mat-option>
-                      <mat-option value="two">Second option</mat-option>
+                    <mat-select formControlName="cosecha"
+                    (selectionChange)="lookForActivity3($event)">
+                      <mat-option [value]="item" *ngFor="let item of name_activity">  <span style="color: black;">{{item}}</span></mat-option>
+
                     </mat-select>
                   </mat-form-field>
                   <br>
                   <mat-form-field appearance="fill">
                     <mat-label>Empaque</mat-label>
-                    <mat-select formControlName="empaqueCultivo">
-                      <mat-option value="one">First option</mat-option>
-                      <mat-option value="two">Second option</mat-option>
+                    <mat-select formControlName="empaqueCultivo"  (selectionChange)="lookForActivity3($event)">
+                      <mat-option [value]="item" *ngFor="let item of name_activity">  <span style="color: black;">{{item}}</span></mat-option>
                     </mat-select>
                   </mat-form-field>
 

@@ -15,7 +15,7 @@ interface Food {
   styleUrls: ['./actividades.component.scss']
 })
 export class ActividadesComponent implements OnInit {
-  description_activity: any = []
+  name_activity: any = []
   isLinear = false;
   fecha = new Date();
   foods: Food[] = [
@@ -57,38 +57,60 @@ export class ActividadesComponent implements OnInit {
     this.fecha = new Date();
 
     this.activity.getActividades1().subscribe(data => {
-      this.description_activity = data
-      console.log(this.description_activity);
+      this.name_activity = data
+      console.log(this.name_activity);
     });
 
     this.activity.getActividades2().subscribe(data => {
-      this.description_activity = data
-      console.log(this.description_activity);
+      this.name_activity = data
+      console.log(this.name_activity);
     });
 
     this.activity.getActividades3().subscribe(data => {
-      this.description_activity = data
-      console.log(this.description_activity);
+      this.name_activity = data
+      console.log(this.name_activity);
     });
 
     this.activity.getActividades4().subscribe(data => {
-      this.description_activity = data
-      console.log(this.description_activity);
+      this.name_activity = data
+      console.log(this.name_activity);
     });
 
     this.activity.getActividades5().subscribe(data => {
-      this.description_activity = data
-      console.log(this.description_activity);
+      this.name_activity = data
+      console.log(this.name_activity);
     });
   }
 
   saveForm(){
 
   }
-
+  //tratamos de convertir DD/MM/YYYY a MM/YYYY
   dateCultivo(event: MatDatepickerInputEvent<Date>) {
     const formattedDate = this.datePipe.transform(event.value, 'MM/yyyy');
     this.stepOneForm.get('dateCultivo')?.setValue(formattedDate);
+  }
+
+
+  lookForActivity(event: any) {
+    console.log(event);
+    this.activity.getActividades1().subscribe(data => {
+      this.name_activity = data;
+      console.log(data); })
+  }
+
+  lookForActivity2(event: any) {
+    console.log(event);
+    this.activity.getActividades2().subscribe(data => {
+      this.name_activity = data;
+      console.log(data); })
+  }
+
+   lookForActivity3(event: any) {
+    console.log(event);
+    this.activity.getActividades3().subscribe(data => {
+      this.name_activity = data;
+      console.log(data); })
   }
 
 }

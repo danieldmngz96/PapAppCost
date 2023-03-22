@@ -30,35 +30,35 @@ handleError(error: HttpErrorResponse): any {
  getActividades1() {
   return this.http.get<any[]>(`${this.actividad1}`).pipe(
     catchError(this.handleError),
-    map((actividades:any) => actividades.map((m:any) => m.description_activity)),
+    map((actividades:any) => actividades.map((m:any) => m.name_activity)),
     );
 }
 
 getActividades2() {
   return this.http.get<any[]>(`${this.actividad2}`).pipe(
     catchError(this.handleError),
-    map((actividades:any) => actividades.map((m:any) => m.description_activity)),
+    map((actividades:any) => actividades.map((m:any) => m.name_activity)),
     );
 }
 
 getActividades3() {
   return this.http.get<any[]>(`${this.actividad3}`).pipe(
     catchError(this.handleError),
-    map((actividades:any) => actividades.map((m:any) => m.description_activity)),
+    map((actividades:any) => actividades.map((m:any) => m.name_activity)),
     );
 }
 
 getActividades4() {
   return this.http.get<any[]>(`${this.actividad4}`).pipe(
     catchError(this.handleError),
-    map((actividades:any) => actividades.map((m:any) => m.description_activity)),
+    map((actividades:any) => actividades.map((m:any) => m.name_activity)),
     );
 }
 
 getActividades5() {
   return this.http.get<any[]>(`${this.actividad5}`).pipe(
     catchError(this.handleError),
-    map((actividades:any) => actividades.map((m:any) => m.description_activity)),
+    map((actividades:any) => actividades.map((m:any) => m.name_activity)),
     );
 }
 }
