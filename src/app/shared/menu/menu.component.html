@@ -14,7 +14,7 @@
                 Registros
               </mat-panel-title>
               <mat-panel-description>
-                 tus registros
+
               </mat-panel-description>
             </mat-expansion-panel-header>
           <ul>
@@ -28,7 +28,7 @@
           </mat-expansion-panel>
         </mat-accordion>
 
-        <button mat-button [matMenuTriggerFor]="menu" color="white">Registros</button>
+        <!-- <button mat-button [matMenuTriggerFor]="menu" color="white">Registros</button>
         <mat-menu #menu="matMenu" class="customize">
           <button mat-menu-item>
             <span style="color: black;">Costos</span>
@@ -43,28 +43,30 @@
               Consultar
             </span>
           </button>
-        </mat-menu>
+        </mat-menu> -->
         <br>
-        <button mat-button [matMenuTriggerFor]="menu2" color="white">Calculos</button>
-        <mat-menu #menu2="matMenu" class="customize">
-            <button mat-menu-item>
-              <span style="color: black;">Precio Venta</span>
-            </button>
-            <button mat-menu-item>
-              <span style="color: black;">
-                Consultar
-              </span>
-            </button>
-          </mat-menu>
-          <br>
-          <button mat-menu-item>
-            <span >
-              Reporte de costos
-            </span>
-          </button>
+        <mat-accordion>
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Calculos
+              </mat-panel-title>
+              <mat-panel-description>
 
-
-
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+          <ul>
+            <li>Precio Venta</li>
+            <li>Consultar</li>
+          </ul>
+          </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true"
+                               (closed)="panelOpenState = false">
+          </mat-expansion-panel>
+        </mat-accordion>
+        <br>
+        <button mat-raised-button style="background-color: var(--green-good); display: flex; margin: 0 auto; width: 100%;"
+        [ngStyle]="{'color': 'white'}" routerLink="/">Reporte de costos</button>
 
       </div>
       <button mat-raised-button style="background-color: var(--green-dark); display: flex; margin: 0 auto;"

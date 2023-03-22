@@ -18,10 +18,7 @@ export class DepartamentosService {
      * @param {json} filters json
      * @returns json
      */
-  /* getDepartameto() {
-    return this.http.get<any>(`${this.municipios}`).pipe(catchError(this.handleError)
-    );
-  } */
+
   getDepartamentos() {
     return this.http.get<any[]>(`${this.municipios}`).pipe(
       catchError(this.handleError),
