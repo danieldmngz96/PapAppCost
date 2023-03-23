@@ -16,11 +16,9 @@ interface Food {
 })
 export class ActividadesComponent implements OnInit {
   name_activity: any = []
+  machines: any[] = [];
   isLinear = false;
   fecha = new Date();
-  foods: Food[] = [
-    {value: 'terreno-1', viewValue: 'hectárea'}
-  ];
   name: any = '';
   stepOneFormOne = true;
   onlyNumbers = /^[0-9]+$/;
@@ -42,14 +40,24 @@ export class ActividadesComponent implements OnInit {
     siembraCultivo: new FormControl('', Validators.required),
     laboresCultivo: new FormControl('', Validators.required),
     cosecha: new FormControl('', Validators.required),
-    empaqueCultivo: new FormControl('', Validators.required),
+    empaqueCultivo: new FormControl('', Validators.required)
+  });
 
+  formAddMachine = new FormGroup({
+    checkMachine: new FormControl('', Validators.required),
+    machineOne:  new FormControl('', Validators.required),
+    machineTwo: new FormControl('', Validators.required),
+    machineThere: new FormControl('', Validators.required),
+    machineFour:  new FormControl('', Validators.required),
+    machineFive:  new FormControl('', Validators.required),
   });
 
   constructor(private router: Router,
     private _formBuilder: FormBuilder,
     private datePipe: DatePipe,
-    private activity: ActividadesService,) { }
+    private activity: ActividadesService,
+    private fb: FormBuilder) {
+ }
 
   ngOnInit() {
     const data = localStorage.getItem('user');
@@ -112,5 +120,9 @@ export class ActividadesComponent implements OnInit {
       this.name_activity = data;
       console.log(data); })
   }
-
+  addMachine() {
+    for(let i=0; i<5; i++) {
+      this.machines.push({});
+    }
+  }
 }

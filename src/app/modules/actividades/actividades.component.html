@@ -63,7 +63,7 @@
                       </mat-radio-group>
                     </div>
                     <div class="col col-12" *ngIf="stepOneForm.controls.checkMachine.value == '1'">
-
+                      <ng-container #inputFields></ng-container>
                       <mat-form-field appearance="fill" class="w-100">
                         <mat-label>Nombre de maquinaria</mat-label>
                         <input matInput placeholder="Ej 3 tractores" formControlName="machineOne">
@@ -84,6 +84,19 @@
                         <mat-label>Nombre de maquinaria</mat-label>
                         <input matInput placeholder="Ej 3 tractores" formControlName="machineFive">
                       </mat-form-field>
+                      <div  color="primary" class="btn-success" style="border-radius: 100%;cursor: pointer;" (click)="addMachine()"><mat-icon style="position: relative;
+                        left: 6px;
+                        color: green;" >add_circle</mat-icon></div>
+                        <form [formGroup]="formAddMachine">
+                          <ng-container #inputFields>
+                            <app-machine-field *ngFor="let machine of machines; let i = index"  formControlName="'machineOne' + (i + 6)"></app-machine-field>
+                            <app-machine-field *ngFor="let machine of machines; let i = index" [formControlName]="'machine' + (i + 11)"></app-machine-field>
+                            <app-machine-field *ngFor="let machine of machines; let i = index" [formControlName]="'machine' + (i + 16)"></app-machine-field>
+                            <app-machine-field *ngFor="let machine of machines; let i = index" [formControlName]="'machine' + (i + 21)"></app-machine-field>
+                            <app-machine-field *ngFor="let machine of machines; let i = index" [formControlName]="'machine' + (i + 26)"></app-machine-field>
+                          </ng-container>
+                        </form>
+
                     </div>
                   </div>
                   <div class="col col-12">
