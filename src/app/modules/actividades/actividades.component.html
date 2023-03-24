@@ -84,18 +84,51 @@
                         <mat-label>Nombre de maquinaria</mat-label>
                         <input matInput placeholder="Ej 3 tractores" formControlName="machineFive">
                       </mat-form-field>
-                      <div  color="primary" class="btn-success" style="border-radius: 100%;cursor: pointer;" (click)="addMachine()"><mat-icon style="position: relative;
+                   <!--   <div  color="primary" class="btn-success" style="border-radius: 100%;cursor: pointer;" (click)="addMachine()"><mat-icon style="position: relative;
                         left: 6px;
-                        color: green;" >add_circle</mat-icon></div>
-                        <form [formGroup]="formAddMachine">
+                        color: green;" >add_circle</mat-icon>  </div> -->
+
+
+                        <div class="col col-12">
+                          <mat-radio-group  formControlName="addMachine">
+                            <mat-label>¿Deseas agregar mas maquinaria?</mat-label>
+                            <mat-radio-button class="m-3" value="1" [color]="'accent'">SI</mat-radio-button>
+                            <mat-radio-button class="m-3" value="0">NO</mat-radio-button>
+                          </mat-radio-group>
+                        </div>
+
+                          <div class="col col-12" *ngIf="formAddMachine.controls.checkMachine.value == '1'">
+                            <ng-container #inputFields></ng-container>
+                            <mat-form-field appearance="fill" class="w-100">
+                              <mat-label>Nombre de maquinaria</mat-label>
+                              <input matInput placeholder="Ej 3 tractores" formControlName="machineOneAdd">
+                            </mat-form-field>
+                            <mat-form-field appearance="fill" class="w-100">
+                              <mat-label>Nombre de maquinaria</mat-label>
+                              <input matInput placeholder="Ej 3 tractores" formControlName="machineTwoAdd">
+                            </mat-form-field>
+                            <mat-form-field appearance="fill" class="w-100">
+                              <mat-label>Nombre de maquinaria</mat-label>
+                              <input matInput placeholder="Ej 3 tractores" formControlName="machineThereAdd">
+                            </mat-form-field>
+                            <mat-form-field appearance="fill" class="w-100">
+                              <mat-label>Nombre de maquinaria</mat-label>
+                              <input matInput placeholder="Ej 3 tractores" formControlName="machineFourAdd">
+                            </mat-form-field>
+                            <mat-form-field appearance="fill" class="w-100">
+                              <mat-label>Nombre de maquinaria</mat-label>
+                              <input matInput placeholder="Ej 3 tractores" formControlName="machineFiveAdd">
+                            </mat-form-field>
+                          </div>
+                       <!--  <form [formGroup]="formAddMachine">
                           <ng-container #inputFields>
-                            <app-machine-field *ngFor="let machine of machines; let i = index"  formControlName="'machineOne' + (i + 6)"></app-machine-field>
+                            <app-machine-field *ngFor="let machine of machines; let i = index" [formControlName]="'machine' + (i + 6)"></app-machine-field>
                             <app-machine-field *ngFor="let machine of machines; let i = index" [formControlName]="'machine' + (i + 11)"></app-machine-field>
                             <app-machine-field *ngFor="let machine of machines; let i = index" [formControlName]="'machine' + (i + 16)"></app-machine-field>
                             <app-machine-field *ngFor="let machine of machines; let i = index" [formControlName]="'machine' + (i + 21)"></app-machine-field>
                             <app-machine-field *ngFor="let machine of machines; let i = index" [formControlName]="'machine' + (i + 26)"></app-machine-field>
                           </ng-container>
-                        </form>
+                        </form> -->
 
                     </div>
                   </div>

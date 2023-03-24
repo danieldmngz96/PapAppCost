@@ -33,6 +33,7 @@ export class ActividadesComponent implements OnInit {
     machineThere : new FormControl('', Validators.required),
     machineFour : new FormControl('', Validators.required),
     machineFive : new FormControl('', Validators.required),
+    addMachine : new FormControl('', Validators.required),
   });
 
   stepTwoForm = new FormGroup({
@@ -43,13 +44,13 @@ export class ActividadesComponent implements OnInit {
     empaqueCultivo: new FormControl('', Validators.required)
   });
 
-  formAddMachine = new FormGroup({
+   formAddMachine = new FormGroup({
     checkMachine: new FormControl('', Validators.required),
-    machineOne:  new FormControl('', Validators.required),
-    machineTwo: new FormControl('', Validators.required),
-    machineThere: new FormControl('', Validators.required),
-    machineFour:  new FormControl('', Validators.required),
-    machineFive:  new FormControl('', Validators.required),
+    machineOneAdd:  new FormControl('', Validators.required),
+    machineTwoAdd: new FormControl('', Validators.required),
+    machineThereAdd: new FormControl('', Validators.required),
+    machineFourAdd:  new FormControl('', Validators.required),
+    machineFiveAdd:  new FormControl('', Validators.required),
   });
 
   constructor(private router: Router,
@@ -121,8 +122,10 @@ export class ActividadesComponent implements OnInit {
       console.log(data); })
   }
   addMachine() {
-    for(let i=0; i<5; i++) {
+    for(let i=0; i<10; i++) {
       this.machines.push({});
+      const controlName = 'machine' + (i + 6);
+    //this.formAddMachine.addControl(controlName, new FormControl('', Validators.required));
     }
   }
 }
