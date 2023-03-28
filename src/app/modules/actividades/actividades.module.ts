@@ -9,6 +9,7 @@ import { FooterModule } from 'src/app/shared/footer/footer.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatStepperModule } from '@angular/material/stepper';
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -18,7 +19,7 @@ import { MatStepperModule } from '@angular/material/stepper';
     FooterModule,
     FormsModule,
     ReactiveFormsModule,
-    MatStepperModule
+    MatStepperModule,
   ],
   declarations: [ActividadesComponent],
   providers: [DatePipe], // agrega DatePipe al arreglo providers
