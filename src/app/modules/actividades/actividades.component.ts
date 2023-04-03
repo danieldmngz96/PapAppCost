@@ -151,4 +151,5 @@ export class ActividadesComponent implements OnInit {
     //this.formAddMachine.addControl(controlName, new FormControl('', Validators.required));
     }
   }
+
 }
