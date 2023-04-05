@@ -35,11 +35,7 @@ export class ActividadesComponent implements OnInit {
     dateCultivoOnlyMonth: new FormControl(new Date(2020,0,1)),
     mumberHectaria : new FormControl('', [Validators.required, Validators.pattern(this.onlyNumbers)]),
     checkMachine: new FormControl('', Validators.required),
-    machineOne : new FormControl('', Validators.required),
-    machineTwo : new FormControl('', Validators.required),
-    machineThere : new FormControl('', Validators.required),
-    machineFour : new FormControl('', Validators.required),
-    machineFive : new FormControl('', Validators.required),
+    checkMachineTwo: new FormControl('', Validators.required),
     addMachine : new FormControl('', Validators.required),
   });
 
@@ -103,7 +99,7 @@ export class ActividadesComponent implements OnInit {
     "month_begin_prod": this.stepOneForm.controls.dateCultivo.value,
     "area_field_prod_m2": this.stepOneForm.controls.mumberHectaria.value,
     "own_machines": this.stepOneForm.controls.checkMachine.value == "1" ? 'si':'no',
-    "machine_name": this.stepOneForm.controls.machineOne.value,
+    "machine_name": '',
     "machines_cost": "75|2.1",
     "machine_expect_time_life": "7|3",
     "field_preparation": "0|1|2|3",
